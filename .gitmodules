@@ -1,3 +1,3 @@
 [submodule "internutopia"]
 	path = internutopia
-	url = /cpfs/user/miboyu/internutopia
+	url = git@github.com:EmbodiedClaw/InternUtopia.git
