@@ -1,0 +1,14 @@
+# Path configuration for EmbodiedClaw
+# All paths can be overridden by environment variables of the same name (uppercase)
+
+paths:
+  # Scene USD files root
+  scene_usd_root: "/cpfs/shared/simulation/liyangzi/grutopia/assets/scenes/GRScenes-100/home_scenes/scenes"
+  # Occupancy maps root
+  occ_map_root: "/cpfs/shared/simulation/miboyu/occ_map"
+  # Robot USD path
+  robot_usd_path: "/cpfs/shared/simulation/miboyu/demo_assets/h1/h1.usd"
+  # Scene caption annotations root
+  scene_anno_root: "/cpfs/user/miboyu/sft/data/scene_anno"
+  # Precomputed nav positions (for test mode)
+  nav_position_path: "/cpfs/user/miboyu/sft/eval_gen/benchmark_splits/misc/nav_position.jsonl"

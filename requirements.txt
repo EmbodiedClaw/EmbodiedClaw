@@ -1,0 +1,9 @@
+starlette
+uvicorn
+mcp
+openai
+transformers
+peft
+Pillow
+numpy
+pyyaml

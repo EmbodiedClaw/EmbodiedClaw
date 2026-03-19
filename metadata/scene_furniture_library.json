@@ -1,0 +1,2999 @@
+{
+    "MV7J6NIKTKJZ2AABAAAAAEI8_desk_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_desk_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "desk_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_81c7866a86475337ea9b5c9f49983dff_0",
+        "room_name": "study room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_81c7866a86475337ea9b5c9f49983dff_0/Instance/Group_00/Component_6"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white desk with black keyboard",
+            "white computer desk setup"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                7.762848377227783,
+                -2.852708578109741,
+                0.6705553531646729
+            ],
+            "max": [
+                9.237486839294434,
+                -2.1661925315856934,
+                0.7892552018165588
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_chestofdrawers_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_chestofdrawers_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "chestofdrawers_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/chestofdrawers/model_d25e26b3bedfefdd830ef5d5e82e099c_0",
+        "room_name": "balcony/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/chestofdrawers/model_d25e26b3bedfefdd830ef5d5e82e099c_0/Instance/Group_00/Component_21"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only chestofdrawers in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                8.855886459350586,
+                1.894034743309021,
+                1.0876681804656982
+            ],
+            "max": [
+                9.257859230041504,
+                2.52439022064209,
+                1.1017379760742188
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_shoecabinet_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_shoecabinet_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "shoecabinet_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/shoecabinet/model_7ffccce108e0fb028a11add911dfdd03_0",
+        "room_name": "balcony/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/shoecabinet/model_7ffccce108e0fb028a11add911dfdd03_0/Instance/Group_00/Component_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "the only shoecabinet in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                8.907858848571777,
+                1.0685691833496094,
+                -3.814697180359872e-08
+            ],
+            "max": [
+                9.257858276367188,
+                1.892565131187439,
+                1.0499998331069946
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_table_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_table_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "table_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_eef587b5c4bcc52eb1400975c3c71e90_0",
+        "room_name": "dinning room/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_eef587b5c4bcc52eb1400975c3c71e90_0/Instance/Group_table_top_00/SM_00_component8_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only table in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                4.407308101654053,
+                1.0917218923568726,
+                0.7460024952888489
+            ],
+            "max": [
+                5.207210063934326,
+                2.68943190574646,
+                0.7523477077484131
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_cabinet_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_cabinet_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "cabinet_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_673bc94266ab62c9def9662480006df5_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_673bc94266ab62c9def9662480006df5_0/Instance/Group_Static/SM_01/MUXE4AAKTIC5IAABAAAAAAA8_primitiveModel_PlankModel_mesh_f0d75a3d__DD__db42__DD__5813__DD__9952__DD__f736caea5018_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "light wood backing cabinet",
+            "cabinet with light wood shelf",
+            "cabinet with white drawers with light wood panel"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                5.628260135650635,
+                -1.7523548603057861,
+                1.0540000200271606
+            ],
+            "max": [
+                5.988860130310059,
+                -0.8350548148155212,
+                1.0720000267028809
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_teatable_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_teatable_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "teatable_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/teatable/model_c2fd7610dd954b82e039b69834b2276b_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/teatable/model_c2fd7610dd954b82e039b69834b2276b_0/Instance/Group_00/Component_9"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only teatable in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.3432183265686035,
+                -3.8455052375793457,
+                0.33688193559646606
+            ],
+            "max": [
+                4.143218517303467,
+                -2.4782021045684814,
+                0.3494935631752014
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_refrigerator_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_refrigerator_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "refrigerator_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/refrigerator/model_dfec604e5077cbebcccb71d59d7293d3_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/refrigerator/model_dfec604e5077cbebcccb71d59d7293d3_0/Instance/Constraint_180",
+            "top_shelf": "/World/env_0/scene/Cube"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only refrigerator in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                2.8917763233184814,
+                0.26294761896133423,
+                0.9323228001594543
+            ],
+            "max": [
+                3.3917763233184814,
+                0.5629476308822632,
+                0.942322850227356
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_microwave_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_microwave_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "microwave_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/microwave/model_5f0ee1ea7d52b0318f56345c21c16e7e_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/microwave/model_5f0ee1ea7d52b0318f56345c21c16e7e_0/Instance/Constraint_200",
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/microwave/model_5f0ee1ea7d52b0318f56345c21c16e7e_0/Instance/Group_00/Component_12"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only microwave in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                2.438509941101074,
+                0.4462971091270447,
+                0.9572906494140625
+            ],
+            "max": [
+                2.704684019088745,
+                0.712471067905426,
+                0.9641281962394714
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_cabinet_9": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_cabinet_9",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "cabinet_9",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_076d45b3d003d7486d88256ae8f4f5c8_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_076d45b3d003d7486d88256ae8f4f5c8_0/Instance/Group_Static/SM_08/MUXE4AAKTIC5IAABAAAAAAA8_primitiveModel_PlankModel_mesh_3a135ecd__DD__ff51__DD__5761__DD__8651__DD__0b42c7898cf0_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with black marble countertop vanity",
+            "cabinet with black marble top",
+            "cabinet with vanity with black faucet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                0.6798601150512695,
+                0.3738451600074768,
+                0.8479999899864197
+            ],
+            "max": [
+                1.2978602647781372,
+                1.5738451480865479,
+                0.85999995470047
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_desk_3": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_desk_3",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "desk_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_6d6734a4cd588aef56a00579870b787a_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_6d6734a4cd588aef56a00579870b787a_0/Instance/Group_00/Component_5"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white desk with teal drawers",
+            "greenish blue drawer desk"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -1.6523808240890503,
+                -3.755322217941284,
+                -3.8146970382513246e-07
+            ],
+            "max": [
+                -0.9187889099121094,
+                -2.6030163764953613,
+                0.7298343777656555
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_bed_1": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_bed_1",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "bed_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_2e4ba3123c93e9e0c6572d006b19aec6_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_2e4ba3123c93e9e0c6572d006b19aec6_0/Instance/SM_ZDB6BFJVAIM7CPTUKE888888/obj6"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with grey bed runner",
+            "bed with white sheets with grey blanket"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                0.035812605172395706,
+                -4.090767860412598,
+                0.3101176917552948
+            ],
+            "max": [
+                1.303596019744873,
+                -2.254472494125366,
+                0.7160405516624451
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_bed_2": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_bed_2",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "bed_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_d73cbfcc067e77e079f69c381041bc09_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_d73cbfcc067e77e079f69c381041bc09_0/Instance/Group_default_00/SM_04_obj7_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed having blue and pink gradient duvet",
+            "bed having black pillow on it"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.1496496200561523,
+                1.034454345703125,
+                0.0055170441046357155
+            ],
+            "max": [
+                -1.3640915155410767,
+                2.372943162918091,
+                0.5815247893333435
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_desk_4": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_desk_4",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "desk_4",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_b1eb371d8edd55b41d7b01fd6aa3bd30_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_b1eb371d8edd55b41d7b01fd6aa3bd30_0/Instance/Group_00/Component_21"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white desk with brown frame",
+            "white top desk with dark apron"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -2.947833299636841,
+                2.4405086040496826,
+                0.7920455932617188
+            ],
+            "max": [
+                -2.5025644302368164,
+                3.370931386947632,
+                0.813745379447937
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_desk_5": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_desk_5",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "desk_5",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/desk/model_7c459f4ed7f98cd08b3ec770d24e3b43_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/desk/model_7c459f4ed7f98cd08b3ec770d24e3b43_0/Instance/SM_66O72B4TDZTWIQPTLA888888/obj1"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "dark wood grain desk",
+            "black textured surface desk",
+            "dark desk with white drawers"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -5.512138366699219,
+                -4.167054176330566,
+                -3.433227391269611e-07
+            ],
+            "max": [
+                -5.081015586853027,
+                -2.557054281234741,
+                0.7499998211860657
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_bed_3": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_bed_3",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "bed_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_63b9fe86834f50992d2df13331074284_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_63b9fe86834f50992d2df13331074284_0/Instance/Group_bed_mattress_00/SM_01_obj15_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with green bed runner",
+            "bed having  sage green throw blanket",
+            "bed having white sheets with green strip"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.161720275878906,
+                -3.49702787399292,
+                0.19376236200332642
+            ],
+            "max": [
+                -2.966348886489868,
+                -1.6161059141159058,
+                0.433133065700531
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_nightstand_2": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_nightstand_2",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "nightstand_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/nightstand/model_89639fa1f5b5a0e8f64fc634bd0f33c2_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/nightstand/model_89639fa1f5b5a0e8f64fc634bd0f33c2_0/Instance/Group_00/Component_1"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only nightstand in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -2.4443318843841553,
+                -1.5437328815460205,
+                0.49069997668266296
+            ],
+            "max": [
+                -2.009320020675659,
+                -0.9170544743537903,
+                0.5860697031021118
+            ]
+        }
+    },
+    "MV7J6NIKTKJZ2AABAAAAAEI8_cabinet_14": {
+        "furniture_id": "MV7J6NIKTKJZ2AABAAAAAEI8_cabinet_14",
+        "scene_id": "MV7J6NIKTKJZ2AABAAAAAEI8",
+        "name": "cabinet_14",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_a263ea2f7c384f912032ae0f8e32e190_0",
+        "room_name": "toilet/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_a263ea2f7c384f912032ae0f8e32e190_0/Instance/Group_Static/SM_25/MUXE4AAKTIC5IAABAAAAAAA8_primitiveModel_ExtrusionModel_mesh_c07efa0c__DD__9e60__DD__11ee__DD__8609__DD__a2548ac94aff_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with white vanity with integrated sink",
+            "cabinet with grey marble backsplash",
+            "white bathroom counter cabinet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.8053388595581055,
+                1.7729451656341553,
+                0.7999999523162842
+            ],
+            "max": [
+                -3.2621397972106934,
+                3.4729442596435547,
+                0.8449999690055847
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_bed_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_bed_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "bed_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_b0637c7c7b53824eb7bc2b556ab8bc72_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_b0637c7c7b53824eb7bc2b556ab8bc72_0/Instance/Group_bed_sheets_00/SM_00_obj7_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white bedding featuring a central dark rectangular pillow with a geometric diamond pattern"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                4.29357385635376,
+                2.775394916534424,
+                0.1996699869632721
+            ],
+            "max": [
+                5.076379776000977,
+                4.679738521575928,
+                0.5237516164779663
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "cabinet_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_1f1ab9dbde89097fa227cf99dd41c761_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_1f1ab9dbde89097fa227cf99dd41c761_0/Instance/Group_default_00/SM_11_obj3_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with dark gray three drawer nightstand",
+            "bedside cabinet with thin handles",
+            "textured dark gray cabinet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                5.459519386291504,
+                4.71038818359375,
+                0.023096999153494835
+            ],
+            "max": [
+                5.93128776550293,
+                5.207839012145996,
+                0.4338039755821228
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "cabinet_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_f1cf6a8b24ef1e645a0555c2231d8f89_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_f1cf6a8b24ef1e645a0555c2231d8f89_0/Instance/Group_default_00/SM_19_obj11_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet in bedroom but not nightstand"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                2.5871119499206543,
+                4.692526817321777,
+                0.5888779759407043
+            ],
+            "max": [
+                2.9071121215820312,
+                5.256999969482422,
+                0.608877956867218
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_bed_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_bed_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "bed_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_f168cb64c63883f32c6df17b4e4f39c2_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_f168cb64c63883f32c6df17b4e4f39c2_0/Instance/Group_bed_mattress_00/SM_00_obj1_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with plain solid beige sheet with a smooth, silk-like texture"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.9676618576049805,
+                -4.296000003814697,
+                0.3124237656593323
+            ],
+            "max": [
+                5.157370090484619,
+                -2.3695404529571533,
+                0.5685955286026001
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_desk_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_desk_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "desk_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_b15e294e5e0be3e5919f4479693071ae_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_b15e294e5e0be3e5919f4479693071ae_0/Instance/Group_00/Component_3"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "pure white rectangular desk",
+            "white desk with angled legs",
+            "smooth white desk with wooden drawer"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.155508041381836,
+                -5.03859281539917,
+                0.5618650913238525
+            ],
+            "max": [
+                4.4769392013549805,
+                -4.460466384887695,
+                0.6031597852706909
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_bed_3": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_bed_3",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "bed_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_2eb52d662345f3bc447acfbbef69abbf_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_2eb52d662345f3bc447acfbbef69abbf_0/Instance/Group_bed_mattress_00/SM_00_obj5_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "dark grey bedspread with a coarse heavy woven texture"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.3839495778083801,
+                0.8654216527938843,
+                0.20645387470722198
+            ],
+            "max": [
+                1.0441398620605469,
+                2.7405507564544678,
+                0.4707643687725067
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_12": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_12",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "cabinet_12",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_21140a86c70ebd80ae0aea2da3ac9635_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_21140a86c70ebd80ae0aea2da3ac9635_0/Instance/Group_default_00/SM_07_obj1_2"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with gold handles",
+            "cabinet with sideboard with small round knobs"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -2.9638891220092773,
+                -4.125661373138428,
+                0.0
+            ],
+            "max": [
+                -1.2058418989181519,
+                -3.6104936599731445,
+                1.0043584108352661
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_table_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_table_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "table_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_7edbf82df1c2cd8f2f2599f8d13ede29_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_7edbf82df1c2cd8f2f2599f8d13ede29_0/Instance/Group_table_top_00/SM_00_obj3_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white marble dining table",
+            "large rectangular stone table"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -2.727267026901245,
+                -3.079434633255005,
+                0.8178694844245911
+            ],
+            "max": [
+                -1.7998926639556885,
+                -1.1250567436218262,
+                0.8531296253204346
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_13": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_13",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "cabinet_13",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_fce7beb99af0497ecb7c6f7f88c3c572_0",
+        "room_name": "entry/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_fce7beb99af0497ecb7c6f7f88c3c572_0/Instance/Group_default_00/SM_23_obj15_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with black and wood zigzags"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.6803998947143555,
+                -1.116810917854309,
+                0.7330672144889832
+            ],
+            "max": [
+                -3.6966805458068848,
+                -0.6963754892349243,
+                0.76214599609375
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_couch_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_couch_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "couch_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/couch/model_8155da257381b2b1e09ab966f098bc0a_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/couch/model_8155da257381b2b1e09ab966f098bc0a_0/Instance/Group_couch_seatsurface_02/SM_23_component0_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only couch in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.451964855194092,
+                2.303169012069702,
+                0.07231399416923523
+            ],
+            "max": [
+                -3.779949903488159,
+                3.255723476409912,
+                0.29762008786201477
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_table_3": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_table_3",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "table_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_fd09d648b984fab892c78c317bf0934c_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_fd09d648b984fab892c78c317bf0934c_0/Instance/Group_table_top_00/SM_00_obj1_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "round black coffee table",
+            "black table with single gold line"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.4486606121063232,
+                2.366147041320801,
+                0.42188799381256104
+            ],
+            "max": [
+                -2.655064344406128,
+                3.1597909927368164,
+                0.43988800048828125
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_table_5": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_table_5",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "table_5",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_c3e316c0d3953fd01f1816bca78c58b1_0",
+        "room_name": "balcony/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_c3e316c0d3953fd01f1816bca78c58b1_0/Instance/Group_table_top_00/SM_00_obj4_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "smooth matte grey table",
+            "plain grey rectangular table"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.7452232837677,
+                4.81917142868042,
+                0.6641219854354858
+            ],
+            "max": [
+                -1.8071792125701904,
+                5.618106365203857,
+                0.6891250610351562
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_15": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_cabinet_15",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "cabinet_15",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_6bd769d42cb22dffc8fbc956c2ad3105_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_6bd769d42cb22dffc8fbc956c2ad3105_0/Instance/Group_default_00/SM_04_obj2_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with tall white open shelving unit",
+            "cabinet with dark interior backing",
+            "display cabinet with circular decor"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.9430169463157654,
+                0.447483628988266,
+                -7.629394360719743e-08
+            ],
+            "max": [
+                -0.6702885031700134,
+                1.2306362390518188,
+                0.9441180229187012
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_bed_4": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_bed_4",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "bed_4",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_e5bfe6ee0e197c4c62ca71c6aadff1c9_0",
+        "room_name": "bedroom/3",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_e5bfe6ee0e197c4c62ca71c6aadff1c9_0/Instance/Group_bed_mattress_00/SM_00_component15_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "beige bedding featuring a distinctive black spherical decorative pillow"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                0.8721091151237488,
+                -3.3178699016571045,
+                0.2149139940738678
+            ],
+            "max": [
+                2.160550117492676,
+                -1.1460697650909424,
+                0.4136538505554199
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_desk_4": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_desk_4",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "desk_4",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_357f7f29385640dde1c9cef2f2963b4c_0",
+        "room_name": "bedroom/3",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_357f7f29385640dde1c9cef2f2963b4c_0/Instance/Group_00/Component_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "black stone top desk",
+            "desk with ribbed drawer front",
+            "dark desk with yellow hardware"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.5350968241691589,
+                -4.104565143585205,
+                0.8215978741645813
+            ],
+            "max": [
+                0.7621433138847351,
+                -3.557265043258667,
+                0.827867865562439
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_fridge_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_fridge_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "fridge_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/refrigerator/model_cf3b87c5f9a44b98d87b33fb8548b7cb_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/refrigerator/model_cf3b87c5f9a44b98d87b33fb8548b7cb_0/Instance/Constraint_358",
+            "handle": "/World/env_0/scene/Meshes/Animation/refrigerator/model_cf3b87c5f9a44b98d87b33fb8548b7cb_0/Instance/Group_358",
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/refrigerator/model_cf3b87c5f9a44b98d87b33fb8548b7cb_0/Instance/Group_00/Component_31"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only fridge in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -5.2461981773376465,
+                -1.8252099752426147,
+                1.0012056827545166
+            ],
+            "max": [
+                -4.682726860046387,
+                -1.2893328666687012,
+                1.0382055044174194
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAI8_microwave_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAI8_microwave_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAI8",
+        "name": "microwave_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/microwave/model_8934c1eebc72666a7e4ce2e8f6376023_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/microwave/model_8934c1eebc72666a7e4ce2e8f6376023_0/Instance/Constraint_200",
+            "top_shelf": "/World/env_0/scene/Cube"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only microwave in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -5.748230457305908,
+                -2.6889543533325195,
+                1.0183428525924683
+            ],
+            "max": [
+                -5.5482306480407715,
+                -2.3889541625976562,
+                1.0193428993225098
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_bed_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_bed_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "bed_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_4b896acb9b89849ad99c2070de113d24_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_4b896acb9b89849ad99c2070de113d24_0/Instance/Group_default_00/component26_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with round white decorative pillow",
+            "bed with greyish purple duvet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -6.471065521240234,
+                2.392547845840454,
+                0.05701015517115593
+            ],
+            "max": [
+                -4.711946964263916,
+                4.276236534118652,
+                0.4607812464237213
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_tvstand_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_tvstand_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "tvstand_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/tvstand/model_56a2286a92f34c8acc7bab93590f5985_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/tvstand/model_56a2286a92f34c8acc7bab93590f5985_0/Instance/SM_ZRBYXVBVAUUTGPTULA888888/obj1"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only tvstand in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.619293212890625,
+                -3.581587553024292,
+                0.0
+            ],
+            "max": [
+                -3.2692930698394775,
+                -1.7815874814987183,
+                0.4399999976158142
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_desk_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_desk_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "desk_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_7c54ca398ccc1bb396ef32013ab9e768_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_7c54ca398ccc1bb396ef32013ab9e768_0/Instance/Group_00/Component_7"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "desk with vertical white drawer handles",
+            "desk with dark brown curved side panels"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.6341772079467773,
+                -4.5333943367004395,
+                0.869465172290802
+            ],
+            "max": [
+                -3.272111177444458,
+                -3.750788450241089,
+                0.8854199051856995
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_bed_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_bed_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "bed_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_14ddad3997a35a26bb9628084c9e2e84_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_14ddad3997a35a26bb9628084c9e2e84_0/Instance/Group_bed_mattress_00/SM_01_obj15_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "plain white bedding",
+            "bed with pair of white rectangular pillows",
+            "bed with minimalist grey headboard"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -5.7315826416015625,
+                -4.080143928527832,
+                0.20298916101455688
+            ],
+            "max": [
+                -4.536211013793945,
+                -2.1992220878601074,
+                0.45375850796699524
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_table_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_table_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "table_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_ac91d35e26a97ca3cdf0451ccd7a79fe_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_ac91d35e26a97ca3cdf0451ccd7a79fe_0/Instance/Group_table_top_00/SM_00_obj1_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "table with dark grey rectangular top",
+            "table with matte black surface"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -1.0192409753799438,
+                2.0839834213256836,
+                0.7055809497833252
+            ],
+            "max": [
+                -0.11923892796039581,
+                3.8828494548797607,
+                0.7400019764900208
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_couch_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_couch_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "couch_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/couch/model_ff515f1297a2e02065b8c6ee2c306c45_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/couch/model_ff515f1297a2e02065b8c6ee2c306c45_0/Instance/Group_couch_seatsurface_02/SM_02_obj15_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only couch in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.18461161851882935,
+                -1.7568334341049194,
+                0.15475045144557953
+            ],
+            "max": [
+                0.616464376449585,
+                -0.975407063961029,
+                0.388473778963089
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_table_3": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_table_3",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "table_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_27e97d78b9839f8df162c6da8155bc10_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_27e97d78b9839f8df162c6da8155bc10_0/Instance/Group_table_top_00/SM_00_obj22_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white rectangular coffee table",
+            "table with light grey smooth surface"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -1.9066588878631592,
+                -2.744166612625122,
+                0.4537554681301117
+            ],
+            "max": [
+                -1.243688941001892,
+                -1.5216823816299438,
+                0.45955848693847656
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_table_4": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_table_4",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "table_4",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_2b9576526532e14c9a431b0ae3cc24e7_0",
+        "room_name": "balcony/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_2b9576526532e14c9a431b0ae3cc24e7_0/Instance/Group_table_top_00/SM_00_component1"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "table with round wood top",
+            "table with single central grey pedestal leg",
+            "table with visible wood grain texture"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -1.5288971662521362,
+                -5.942501544952393,
+                0.7630000114440918
+            ],
+            "max": [
+                -0.6829671859741211,
+                -5.096571445465088,
+                0.7980000376701355
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_microwave_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_microwave_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "microwave_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/microwave/model_0a75472d927832f61bc099d823c4f512_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/microwave/model_0a75472d927832f61bc099d823c4f512_0/Instance/Constraint_200",
+            "top_shelf": "/World/env_0/scene/Cube_01"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only microwave in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                2.712190866470337,
+                4.410675525665283,
+                0.846287190914154
+            ],
+            "max": [
+                3.012190818786621,
+                4.910675525665283,
+                0.8472872972488403
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_refrigerator_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_refrigerator_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "refrigerator_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/refrigerator/model_7a3d45e0c4b1dc7684ae866eae744f23_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/refrigerator/model_7a3d45e0c4b1dc7684ae866eae744f23_0/Instance/Constraint_520",
+            "top_shelf": "/World/env_0/scene/Cube"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only refrigerator in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                1.3598171472549438,
+                1.5258609056472778,
+                1.2055439949035645
+            ],
+            "max": [
+                1.6598172187805176,
+                1.825860857963562,
+                1.2155439853668213
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_bed_3": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_bed_3",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "bed_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_6a5292da635a8e082a34a53c40d198d8_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_6a5292da635a8e082a34a53c40d198d8_0/Instance/Group_default_00/SM_04_obj7_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with small black square throw pillow",
+            "bed with peach and grey gradient duvet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                4.255208969116211,
+                2.194882869720459,
+                0.005517005920410156
+            ],
+            "max": [
+                5.593697547912598,
+                3.980440616607666,
+                0.5815247893333435
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAAAQ8_desk_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAAAQ8_desk_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAAAQ8",
+        "name": "desk_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_1dfdb281cdc93e18a38d97b4551181b7_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_1dfdb281cdc93e18a38d97b4551181b7_0/Instance/Group_00/Component_7"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "desk with horizontal gold drawer handles"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                5.805206298828125,
+                3.830415964126587,
+                0.5398841500282288
+            ],
+            "max": [
+                6.255206108093262,
+                4.830419063568115,
+                0.6998841762542725
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_cabinet_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_cabinet_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "cabinet_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_6203c42c17702a87e4856f1e69484c07_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_6203c42c17702a87e4856f1e69484c07_0/Instance/Group_default_00/SM_02_obj16_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with rounded red nightstand",
+            "red cabinet with chocolate top"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -5.77962064743042,
+                -5.019689559936523,
+                0.07664499431848526
+            ],
+            "max": [
+                -5.4620819091796875,
+                -4.362605571746826,
+                0.5482630133628845
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_bed_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_bed_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "bed_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_a293af536df926efd351944a5dc258d6_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_a293af536df926efd351944a5dc258d6_0/Instance/Group_bed_mattress_00/SM_04_obj11_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with light grey and white bedding",
+            "bed with solid charcoal grey pillows",
+            "bed with dark grey bed runner"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.7712721824646,
+                -4.24943208694458,
+                0.20188380777835846
+            ],
+            "max": [
+                -3.584249496459961,
+                -2.547990083694458,
+                0.4914519786834717
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_cabinet_7": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_cabinet_7",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "cabinet_7",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_ff95b3b8b446bfbfcf020dec3e15961f_0",
+        "room_name": "bathroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_ff95b3b8b446bfbfcf020dec3e15961f_0/Instance/Group_Static/SM_08/MUNIDBAKTJS66AABAAAAADA8_primitiveModel_PlankModel_mesh_d5e17ddc__DD__7b40__DD__557c__DD__be2a__DD__065ad12ee37c_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with speckled stone sink",
+            "white washbasin cabinet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -1.1534065008163452,
+                -2.024381399154663,
+                0.7480000257492065
+            ],
+            "max": [
+                -0.585406482219696,
+                -1.2243815660476685,
+                0.7599999904632568
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_bed_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_bed_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "bed_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_8630013a7fa13e4ce025b4a651e1f969_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_8630013a7fa13e4ce025b4a651e1f969_0/Instance/Group_bed_sheets_00/SM_01_obj2_1"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with dusty pink blanket",
+            "bed with salmon colored pillow",
+            "bed with black checkered pillows"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.589087724685669,
+                1.948535680770874,
+                0.2680160105228424
+            ],
+            "max": [
+                -2.0467727184295654,
+                3.8197078704833984,
+                0.5741735696792603
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_cabinet_8": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_cabinet_8",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "cabinet_8",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_23a0a05e0bc56eb8c694d3d648b4d59a_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_23a0a05e0bc56eb8c694d3d648b4d59a_0/Instance/Group_default_00/SM_11_obj3_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "dark walnut wood nightstand cabinet",
+            "square dark wood nightstand cabinet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.411679744720459,
+                3.9879798889160156,
+                0.023096999153494835
+            ],
+            "max": [
+                -3.9399116039276123,
+                4.459748268127441,
+                0.4338039755821228
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_desk_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_desk_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "desk_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_1cad67b13f608fe7515f12018cac6be1_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_1cad67b13f608fe7515f12018cac6be1_0/Instance/Group_00/Component_19"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only desk in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                0.6671813130378723,
+                4.977025508880615,
+                0.7450918555259705
+            ],
+            "max": [
+                1.8671813011169434,
+                5.577025413513184,
+                0.7600915431976318
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_couch_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_couch_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "couch_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/couch/model_08d0bcdd1a55306a954a104ac825db17_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/couch/model_08d0bcdd1a55306a954a104ac825db17_0/Instance/Group_couch_seatsurface_01/SM_04_obj2_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only couch in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.079824209213257,
+                2.996931314468384,
+                0.20554985105991364
+            ],
+            "max": [
+                4.056849002838135,
+                4.001956462860107,
+                0.3797697424888611
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_table_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_table_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "table_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_ba58eac3d68c4df3bb06b3cb7952bfc3_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_ba58eac3d68c4df3bb06b3cb7952bfc3_0/Instance/Group_table_top_00/SM_00_obj4_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "round white coffee table",
+            "low white circular table",
+            "white table with thick legs"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                1.270054578781128,
+                2.1295487880706787,
+                0.35403892397880554
+            ],
+            "max": [
+                2.2698752880096436,
+                3.129138231277466,
+                0.3740409016609192
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_table_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_table_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "table_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_f97c61131b034e8743c5281d09f792e5_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_f97c61131b034e8743c5281d09f792e5_0/Instance/Group_table_top_00/SM_00_component2_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "dark grey dining table",
+            "rectangular matte grey table",
+            "charcoal table with fruit bowl"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                1.427512526512146,
+                -3.1677029132843018,
+                0.6653042435646057
+            ],
+            "max": [
+                2.2228026390075684,
+                -1.217702865600586,
+                0.6853042244911194
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_cabinet_15": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_cabinet_15",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "cabinet_15",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_29b72b0d5240658aead8790477ef6e22_0",
+        "room_name": "corridor/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_29b72b0d5240658aead8790477ef6e22_0/Instance/Group_default_00/SM_09_obj2_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "long white sideboard cabinet",
+            "the cabinet used where I store my keys when I'm back"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                4.591090679168701,
+                -1.5321406126022339,
+                0.839335024356842
+            ],
+            "max": [
+                5.8857011795043945,
+                -1.1861051321029663,
+                0.856419026851654
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_microwave_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_microwave_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "microwave_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/microwave/model_46fc0bbd1605578fd8b3097884a27ff2_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/microwave/model_46fc0bbd1605578fd8b3097884a27ff2_0/Instance/Constraint_200",
+            "top_shelf": "/World/env_0/scene/Cube"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only microwave in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.8564610481262207,
+                -2.879344940185547,
+                0.5040000081062317
+            ],
+            "max": [
+                4.156461238861084,
+                -2.5793449878692627,
+                0.5139999985694885
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABA8_refrigerator_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABA8_refrigerator_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABA8",
+        "name": "refrigerator_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/refrigerator/model_a8319465e589d8abe840f34481bef8f8_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/refrigerator/model_a8319465e589d8abe840f34481bef8f8_0/Instance/Constraint_351",
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/refrigerator/model_a8319465e589d8abe840f34481bef8f8_0/Instance/Group_00/Component_29"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only refrigerator in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.34126847982406616,
+                -3.7682135105133057,
+                1.0757807493209839
+            ],
+            "max": [
+                -0.007766004651784897,
+                -3.328070878982544,
+                1.0794752836227417
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_bed_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_bed_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "bed_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_4ade932ea8702df20ef260ad13b705f8_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_4ade932ea8702df20ef260ad13b705f8_0/Instance/Group_bed_sheets_00/SM_01_obj7_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with yellow pillow",
+            "bed with grey plaid bedding",
+            "white and grey grid bed"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.777148723602295,
+                -4.998335838317871,
+                0.24567699432373047
+            ],
+            "max": [
+                -2.8184406757354736,
+                -3.6703929901123047,
+                0.46651899814605713
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_microwave_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_microwave_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "microwave_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/microwave/model_61e9bf9376f15a482d826b1b54b86fd7_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/microwave/model_61e9bf9376f15a482d826b1b54b86fd7_0/Instance/Constraint_200",
+            "top_shelf": "/World/env_0/scene/Cube"
+        },
+        "functionals": [
+            "surface",
+            "door"
+        ],
+        "captions": [
+            "the only microwave in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.049803256988525,
+                5.542342185974121,
+                1.033690094947815
+            ],
+            "max": [
+                -3.649803400039673,
+                5.742342472076416,
+                1.0436900854110718
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_desk_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_desk_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "desk_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_c12a9b122a2bcc141913669fab10645a_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_c12a9b122a2bcc141913669fab10645a_0/Instance/Group_00/Component_17"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "desk with white marble tabletop",
+            "white stone desk",
+            "desk with marble patterned surface"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -5.849999904632568,
+                -3.1499998569488525,
+                0.8005635142326355
+            ],
+            "max": [
+                -5.400000095367432,
+                -1.9499999284744263,
+                0.8043305277824402
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_table_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_table_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "table_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_794fb7b037149862a6889d817e66af39_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_794fb7b037149862a6889d817e66af39_0/Instance/Group_default_00/SM_08_obj3_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "grey two-drawer nightstand table",
+            "matte grey side table",
+            "grey square bedside table"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.1495931148529053,
+                -3.6092615127563477,
+                0.11953599005937576
+            ],
+            "max": [
+                -2.75,
+                -3.159261465072632,
+                0.45953595638275146
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_refrigerator_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_refrigerator_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "refrigerator_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/refrigerator/model_171ceddcf9a73c7542be3f74ee6d4c4d_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/refrigerator/model_171ceddcf9a73c7542be3f74ee6d4c4d_0/Instance/Constraint_361",
+            "top_shelf": "/World/env_0/scene/Cube_01"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only refrigerator in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.383341073989868,
+                1.6285866498947144,
+                1.3356831073760986
+            ],
+            "max": [
+                -2.7833409309387207,
+                1.928586721420288,
+                1.3456830978393555
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_table_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_table_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "table_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_a3b65a4d5cbe5c575f2d5963098a4fbe_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_a3b65a4d5cbe5c575f2d5963098a4fbe_0/Instance/Group_table_top_00/SM_01_obj1_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "black wood grain table",
+            "dark charcoal dining table",
+            "dinning table with textured black wooden surface"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -1.692790150642395,
+                1.6637755632400513,
+                0.6747700572013855
+            ],
+            "max": [
+                -0.7130091786384583,
+                4.043345928192139,
+                0.7062299847602844
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_table_3": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_table_3",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "table_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_8eeceb96f86dfc3ced8f1879dda5306a_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_8eeceb96f86dfc3ced8f1879dda5306a_0/Instance/Group_table_top_00/SM_00_obj2_1"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "round black marble table",
+            "gold leg coffee table",
+            "circular nesting table"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.5922340750694275,
+                -3.9823522567749023,
+                0.44749999046325684
+            ],
+            "max": [
+                0.3077658712863922,
+                -3.0823521614074707,
+                0.45949995517730713
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_couch_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_couch_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "couch_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/couch/model_a60124061a435df069f42f4dfcecd076_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/couch/model_a60124061a435df069f42f4dfcecd076_0/Instance/Group_couch_seatsurface_01/SM_22_component16_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only couch in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -2.1862356662750244,
+                -4.085441589355469,
+                0.07231500744819641
+            ],
+            "max": [
+                -1.5003637075424194,
+                -3.2435808181762695,
+                0.29762038588523865
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_counter_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_counter_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "counter_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/counter/model_28f3f1060c31e58327a03d8ce1f3cc70_0",
+        "room_name": "toilet/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/sink/model_dc2e8cb1a7d54886c1c9bdd37be3c02d_0/Instance/Group_counter_sink_00/SM_00_obj3_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only counter in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                0.4680403769016266,
+                2.290931463241577,
+                0.6829543709754944
+            ],
+            "max": [
+                0.9153269529342651,
+                2.8797104358673096,
+                0.7598673701286316
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_bed_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_bed_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "bed_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_9ba743eed1783735aed4deec55ef651b_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_9ba743eed1783735aed4deec55ef651b_0/Instance/Group_bed_mattress_00/SM_00_obj5_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "dark houndstooth bed",
+            "bed with black checkered bedding",
+            "dark grey patterned bed"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                2.872541666030884,
+                2.9853856563568115,
+                0.19063730537891388
+            ],
+            "max": [
+                4.739476203918457,
+                4.688844203948975,
+                0.471445769071579
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_desk_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_desk_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "desk_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_129eaaa4206674a5140994f4ced17268_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_129eaaa4206674a5140994f4ced17268_0/Instance/Group_00/Component_12"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "desk with dark wood tabletop",
+            "brown wooden desk",
+            "desk with wood grain surface"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                4.5680670738220215,
+                4.751931190490723,
+                0.41882964968681335
+            ],
+            "max": [
+                5.025171279907227,
+                5.666140079498291,
+                0.4291144609451294
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_cabinet_14": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_cabinet_14",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "cabinet_14",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_ae837cc0d1d9ab86373b3e84267aed7e_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_ae837cc0d1d9ab86373b3e84267aed7e_0/Instance/Group_default_00/SM_06_obj1_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "brown wooden nightstand cabinet",
+            "brown drawer cabinet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                4.598440647125244,
+                2.362708330154419,
+                0.4513069689273834
+            ],
+            "max": [
+                4.995440483093262,
+                2.8827083110809326,
+                0.47999998927116394
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_bed_3": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_bed_3",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "bed_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_ac898eb677dd1f675bf6e24c0c020596_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_ac898eb677dd1f675bf6e24c0c020596_0/Instance/Group_bed_sheets_00/SM_04_obj11_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "black satin bed",
+            "bed with brown velvet pillows",
+            "bed with white tufted headboard"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.9196672439575195,
+                -4.167048931121826,
+                0.2343759834766388
+            ],
+            "max": [
+                5.760016918182373,
+                -2.4087350368499756,
+                0.460666298866272
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABQ8_cabinet_20": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABQ8_cabinet_20",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABQ8",
+        "name": "cabinet_20",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_f6858621053076dd0b203508f4949600_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_f6858621053076dd0b203508f4949600_0/Instance/Group_default_00/SM_05_component5_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white classic nightstand cabinet",
+            "two drawer cabinet"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                5.380007743835449,
+                -2.194009304046631,
+                0.5899999737739563
+            ],
+            "max": [
+                5.780007839202881,
+                -1.5940093994140625,
+                0.6200000047683716
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_table_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_table_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "table_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_aed34bf72ac5d0043d97650c61e30afc_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_aed34bf72ac5d0043d97650c61e30afc_0/Instance/Group_table_top_00/SM_00_component0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "the rectangular table",
+            "the table much larger than another one",
+            "the table where we have dinner"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.16217041015625,
+                -1.7190508842468262,
+                0.7379999160766602
+            ],
+            "max": [
+                -1.3621681928634644,
+                -0.9190488457679749,
+                0.7439998984336853
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_couch_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_couch_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "couch_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/couch/model_05d001fc7132a5e4fe2425a0e70c4bc1_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/couch/model_05d001fc7132a5e4fe2425a0e70c4bc1_0/Instance/Group_couch_seatsurface_01/SM_03_obj2_2"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "the couch in front of the TV"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -3.849367618560791,
+                2.2024362087249756,
+                0.1808031052350998
+            ],
+            "max": [
+                -3.0947136878967285,
+                2.872718095779419,
+                0.37587854266166687
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_table_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_table_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "table_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_638809136a3aed4ed81d9d8a63967d30_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_638809136a3aed4ed81d9d8a63967d30_0/Instance/Group_table_top_00/SM_00_component1"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "the rounded rectangular table",
+            "the table much smaller than another one",
+            "the table to place my snack for watching TV"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -2.7570033073425293,
+                2.3281562328338623,
+                0.26516100764274597
+            ],
+            "max": [
+                -1.6643115282058716,
+                3.503386974334717,
+                0.2699880003929138
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_desk_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_desk_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "desk_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_58aa3bd455a23b9de212727b903b95ed_0",
+        "room_name": "study room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_58aa3bd455a23b9de212727b903b95ed_0/Instance/Group_00/Component_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white desk in front of a picture",
+            "white desk with rectangular wooden handles",
+            "wide desk with orange drawer pulls",
+            "white unit with flat wood handles"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.24981296062469482,
+                -3.5162312984466553,
+                0.7220539450645447
+            ],
+            "max": [
+                0.24993211030960083,
+                -2.0762991905212402,
+                0.7380000352859497
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_6": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_6",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "cabinet_6",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_475808e6907722a0034197b378d841b8_0",
+        "room_name": "study room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_475808e6907722a0034197b378d841b8_0/Instance/Group_Static/SM_03/MUNMTEIKTJS66AABAAAAABI8_primitiveModel_PlankModel_mesh_a36da856__DD__d70e__DD__5160__DD__9ecb__DD__b9a1d58d86fa_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white cabinet with yellow shelf back",
+            "cabinet with vertical slatted wall unit",
+            "cabinet with drawers with orange inner backing"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                2.3599319458007812,
+                -1.3753304481506348,
+                0.699999988079071
+            ],
+            "max": [
+                2.7099320888519287,
+                -0.8113303780555725,
+                0.7179999947547913
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_7": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_7",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "cabinet_7",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_add913715e2cf1e79e85c68a9d2a1927_0",
+        "room_name": "washingroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_add913715e2cf1e79e85c68a9d2a1927_0/Instance/Group_Static/SM_00/MUNMTEIKTJS66AABAAAAABI8_primitiveModel_ExtrusionModel_mesh_2411409c__DD__8f75__DD__11ee__DD__a416__DD__823fd6011364_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white cabinet with grey bottle",
+            "white cabinet next to the washingmachine"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                0.7719319462776184,
+                1.5117695331573486,
+                0.7965499758720398
+            ],
+            "max": [
+                1.409932017326355,
+                1.8517695665359497,
+                0.8365499973297119
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_washingmachine_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_washingmachine_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "washingmachine_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/washingmachine/model_189a3d50970f4cc5217fde216fb3d58f_0",
+        "room_name": "washingroom/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/washingmachine/model_189a3d50970f4cc5217fde216fb3d58f_0/Instance/Constraint_200",
+            "top_shelf": "/World/env_0/objects/washingmachine_1_base"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the washingmachine"
+        ],
+        "receptacle_bbox": null
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_bed_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_bed_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "bed_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_1e31f0edc71fb0b828bc90a472b42a76_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_1e31f0edc71fb0b828bc90a472b42a76_0/Instance/Group_bed_mattress_00/SM_02_obj19_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with plain white bedding",
+            "bed with all-white bed sheet",
+            "bed with matte white mattress cover"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                2.820403575897217,
+                3.1650502681732178,
+                0.17168296873569489
+            ],
+            "max": [
+                4.025777816772461,
+                4.334970474243164,
+                0.4722851514816284
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_8": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_8",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "cabinet_8",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_7ad1ba177e11d6a85ef70e88aee6ecf6_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_7ad1ba177e11d6a85ef70e88aee6ecf6_0/Instance/SM_ZRHIBEJVAJ37YPTULY888888/obj2"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "the green nightstand cabinet",
+            "cabinet with  grey cube with round mesh grill",
+            "square nightstand with circular rattan center",
+            "box table with circle insert"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                4.358932018280029,
+                2.7158281803131104,
+                0.0
+            ],
+            "max": [
+                4.70993185043335,
+                3.115828275680542,
+                0.4504999816417694
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_desk_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_desk_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "desk_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/desk/model_636506e7363d884dc57ea09646907451_0",
+        "room_name": "bedroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/desk/model_636506e7363d884dc57ea09646907451_0/Instance/Group_00/Component_11"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white desk in front of the blank wall",
+            "the desk with black handle",
+            "the desk near my bed",
+            "white desk with round black knob",
+            "simple desk with cylindrical legs",
+            "white table with single dark knob"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                4.211633205413818,
+                1.0837684869766235,
+                0.7186441421508789
+            ],
+            "max": [
+                4.709931373596191,
+                2.482900381088257,
+                0.7454425692558289
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_9": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_9",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "cabinet_9",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_e2b8800c58a36ce26a041ea22343d54a_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_e2b8800c58a36ce26a041ea22343d54a_0/Instance/Group_Static/SM_00/MUNMTEIKTJS66AABAAAAABI8_primitiveModel_ExtrusionModel_mesh_2412523d__DD__8f75__DD__11ee__DD__ae26__DD__e6200fb29f6c_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "the white cabinet next to the bedroom sink"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                5.791933059692383,
+                1.0917689800262451,
+                0.8999999761581421
+            ],
+            "max": [
+                6.309933185577393,
+                1.4317688941955566,
+                0.9399999976158142
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_bed_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_bed_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "bed_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_e72cdb44115c10b2d615c289cf069fb8_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_e72cdb44115c10b2d615c289cf069fb8_0/Instance/Group_bed_mattress_00/SM_04_obj11_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with dark satin bedding",
+            "layered grey and black bed",
+            "bed with silky black bed runner"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.9291036128997803,
+                -2.784311056137085,
+                0.1861693114042282
+            ],
+            "max": [
+                5.224395751953125,
+                -0.9276792407035828,
+                0.502149224281311
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_10": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_cabinet_10",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "cabinet_10",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_35d219a18e65d3f80d0fe7481aeada05_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/cabinet/model_35d219a18e65d3f80d0fe7481aeada05_0/Instance/Group_default_00/SM_05_obj4_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "black wood grain nightstand cabinet",
+            "dark rounded cabinet bedside table",
+            "whole-black cabinet with flat base"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.0186760425567627,
+                -0.8612063527107239,
+                0.45799997448921204
+            ],
+            "max": [
+                3.388646125793457,
+                -0.3112063407897949,
+                0.4729999899864197
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_sink_0": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_sink_0",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "sink_0",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_61902fc22863114e0567f15c9c46497a_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "top_shelf": "/World/env_0/objects/sink_0_base"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "stainless steel double sink",
+            "sink with rectangular metallic basins",
+            "silver dual bowl sink"
+        ],
+        "receptacle_bbox": null
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_sink_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_sink_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "sink_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/sink/model_42d1655a848525f9c4bd0f97f5e2da89_0",
+        "room_name": "washingroom/0",
+        "components": {
+            "top_shelf": "/World/env_0/objects/sink_1_base"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "oval vessel sink",
+            "sink with round ceramic basin",
+            "single bowl bathroom sink"
+        ],
+        "receptacle_bbox": null
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_potlid_0": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_potlid_0",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "potlid_0",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/pan/model_5cc24d6952e7dcfd8c275cc7fe89f6ab_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/pan/model_5cc24d6952e7dcfd8c275cc7fe89f6ab_0/Instance/Group_240/Component_1"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "the pot lid"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -5.3135857582092285,
+                -5.752322673797607,
+                0.9653403162956238
+            ],
+            "max": [
+                -5.073197364807129,
+                -5.5119309425354,
+                0.994520902633667
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_pot_0": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_pot_0",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "pot_0",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/pan/model_5cc24d6952e7dcfd8c275cc7fe89f6ab_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/pan/model_5cc24d6952e7dcfd8c275cc7fe89f6ab_0/Instance/Group_00/Component_7"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "the pot on the stove"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -5.314911365509033,
+                -5.7536492347717285,
+                0.900651216506958
+            ],
+            "max": [
+                -5.071871757507324,
+                -5.5106048583984375,
+                0.9578133821487427
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAABY8_electriccooker_0": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAABY8_electriccooker_0",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAABY8",
+        "name": "electriccooker_0",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/electriccooker/model_124d5fee27bcbf7536e325ea64691248_0/Instance/Constraint_250",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/electriccooker/model_124d5fee27bcbf7536e325ea64691248_0/Instance/Constraint_250",
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/electriccooker/model_124d5fee27bcbf7536e325ea64691248_0/Instance/Group_00/Component_17"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only electriccooker in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.989952087402344,
+                -4.073448657989502,
+                0.9129071831703186
+            ],
+            "max": [
+                -4.800604343414307,
+                -3.886587142944336,
+                1.0045586824417114
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_table_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_table_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "table_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_f6c7b5049ba2987f47169b68e446cf96_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_f6c7b5049ba2987f47169b68e446cf96_0/Instance/Group_table_top_00/SM_00_obj2_2"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white marble surface table",
+            "light wood slats table",
+            "rectangular dining table"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                1.2905858755111694,
+                -0.3271300196647644,
+                0.9336404204368591
+            ],
+            "max": [
+                3.204457998275757,
+                0.711544930934906,
+                0.9919929504394531
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_table_3": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_table_3",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "table_3",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/table/model_d4d736b2a46ef277fe1d5401da2e5341_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/table/model_d4d736b2a46ef277fe1d5401da2e5341_0/Instance/Group_table_top_00/SM_02_component2_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "round black table",
+            "dark veined marble table"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.0501069612801075,
+                -4.168981075286865,
+                0.3371279835700989
+            ],
+            "max": [
+                0.8410300016403198,
+                -3.2780392169952393,
+                0.35712799429893494
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_tvstand_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_tvstand_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "tvstand_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/tvstand/model_27d308facf7182691b2de8351521e63c_0",
+        "room_name": "living room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/tvstand/model_27d308facf7182691b2de8351521e63c_0/Instance/SM_ZE76VMRVAII2IPTUJU888888/obj2"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only tvstand in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -1.3994728326797485,
+                -5.110541343688965,
+                0.036373987793922424
+            ],
+            "max": [
+                -1.090040683746338,
+                -3.3883934020996094,
+                0.32467201352119446
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_cabinet_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_cabinet_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "cabinet_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_497abff4632b822c5991eef4a6c788a8_0",
+        "room_name": "dinning room/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_497abff4632b822c5991eef4a6c788a8_0/Instance/Group_Static/SM_07/MUKRDSYKTJLR6AABAAAAAAI8_primitiveModel_PlankModel_mesh_3fbeeaa7__DD__0bde__DD__5801__DD__b41e__DD__f1f143b78c85_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "cabinet with copper colored niche",
+            "cabinet with silver power track",
+            "cabinet with circular socket row"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -1.3794727325439453,
+                -0.8395311832427979,
+                0.8980000019073486
+            ],
+            "max": [
+                -1.1014727354049683,
+                0.6374688148498535,
+                0.9159999489784241
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_bed_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_bed_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "bed_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_47aab669de71c283e2280d6a075711f8_0",
+        "room_name": "bedroom/1",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_47aab669de71c283e2280d6a075711f8_0/Instance/Group_default_00/SM_05_component1_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with brown textured throw pillow"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                5.363612174987793,
+                1.0544471740722656,
+                0.005990028381347656
+            ],
+            "max": [
+                6.475881099700928,
+                3.0479421615600586,
+                0.43202051520347595
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_cabinet_9": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_cabinet_9",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "cabinet_9",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_b167828cbdec5ad36d70d57a297ecf44_0",
+        "room_name": "toilet/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_b167828cbdec5ad36d70d57a297ecf44_0/Instance/Group_Static/SM_17/MUKRDSYKTJLR6AABAAAAAAI8_primitiveModel_PlankModel_mesh_85c541ef__DD__2851__DD__560f__DD__9c7f__DD__b204d90eece2_roomId_null_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "white terrazzo countertop cabinet",
+            "speckled stone sink embedded cabinet",
+            "cabinet integrated wash basin"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                3.652527332305908,
+                2.030468702316284,
+                0.6197052001953125
+            ],
+            "max": [
+                4.055527210235596,
+                2.590468645095825,
+                0.6347051858901978
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_sink_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_sink_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "sink_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_b375f00c61a4bac1a71e6a62e0c60086_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/BaseAnimation/cabinet/model_b375f00c61a4bac1a71e6a62e0c60086_0/Instance/Group_Static/SM_54/SM_ZQDFUZZVAUVFKPTULY888888/obj4"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "The only sink in the room."
+        ],
+        "receptacle_bbox": {
+            "min": [
+                0.2605273425579071,
+                3.2104687690734863,
+                0.5986999869346619
+            ],
+            "max": [
+                1.0605273246765137,
+                3.67046856880188,
+                0.838699996471405
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_refrigerator_1": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_refrigerator_1",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "refrigerator_1",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/refrigerator/model_b40856029554f6e152f24a267738f99f_0",
+        "room_name": "kitchen/0",
+        "components": {
+            "door": "/World/env_0/scene/Meshes/Animation/refrigerator/model_b40856029554f6e152f24a267738f99f_0/Instance/Constraint_475",
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/refrigerator/model_b40856029554f6e152f24a267738f99f_0/Instance/Group_00/Component_43"
+        },
+        "functionals": [
+            "door",
+            "surface"
+        ],
+        "captions": [
+            "the only refrigerator in the scene"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -0.4188005030155182,
+                2.3185951709747314,
+                1.0656375885009766
+            ],
+            "max": [
+                -0.11581069976091385,
+                2.6599960327148438,
+                1.068961262702942
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_bed_2": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_bed_2",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "bed_2",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Furnitures/bed/model_220dc0e6e57c17bfecd1f256564efcc2_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Furnitures/bed/model_220dc0e6e57c17bfecd1f256564efcc2_0/Instance/Group_bed_mattress_00/component2_0"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "bed with all-white bedding set ",
+            "bed with plain white bed sheet",
+            "bed with stacked white pillows"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.411554336547852,
+                -5.615792274475098,
+                0.19724947214126587
+            ],
+            "max": [
+                -1.9860923290252686,
+                -3.742025136947632,
+                0.32844337821006775
+            ]
+        }
+    },
+    "MVUCSQAKTKJ5EAABAAAAACA8_table_5": {
+        "furniture_id": "MVUCSQAKTKJ5EAABAAAAACA8_table_5",
+        "scene_id": "MVUCSQAKTKJ5EAABAAAAACA8",
+        "name": "table_5",
+        "type": "InteractiveObjCfg",
+        "prim_path": "/World/env_0/scene/Meshes/Animation/table/model_c49e044ab12da5fbcde90c5d1e64a1b4_0",
+        "room_name": "bedroom/2",
+        "components": {
+            "top_shelf": "/World/env_0/scene/Meshes/Animation/table/model_c49e044ab12da5fbcde90c5d1e64a1b4_0/Instance/Group_00/Component_20"
+        },
+        "functionals": [
+            "surface"
+        ],
+        "captions": [
+            "grey vanity table"
+        ],
+        "receptacle_bbox": {
+            "min": [
+                -4.509472370147705,
+                -3.503953695297241,
+                0.4873829483985901
+            ],
+            "max": [
+                -4.005229473114014,
+                -2.464531183242798,
+                0.6722521781921387
+            ]
+        }
+    }
+}
