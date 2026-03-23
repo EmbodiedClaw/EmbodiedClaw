@@ -2,7 +2,7 @@
   <img src="docs/eclaw-logo.jpg" alt="EmbodiedClaw banner" />
 </p>
 
-<h1 align="center">EmbodiedClaw: Open Framework for Embodied Manipulation Training & Evaluation</h1>
+<h1 align="center">EmbodiedClaw: Bridging Agents to Interactive Physical Environments</h1>
 
 <p align="center">
   <a href="https://github.com/InternRobotics/EmbodiedClaw"><img src="https://img.shields.io/badge/GitHub-EmbodiedClaw-black?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
