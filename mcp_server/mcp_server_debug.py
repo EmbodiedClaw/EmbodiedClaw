@@ -1,17 +1,17 @@
 """
-Debug version of mcp_server.py — uses mcp_env_debug (non-headless GUI).
+MCP evaluation server — non-headless GUI mode.
 
-Key difference: before importing actions.py, sys.modules['eval_server.mcp_env'] is
-aliased to mcp_env_debug so that actions.py reuses the already-running simulation
-instead of triggering a second initialization (which would crash).
+mcp_env_debug is aliased as mcp_server.mcp_env in sys.modules so that
+actions.py shares the already-running simulation instance.
 
 Usage:
-    TARGET_SCENE_ID=MVUCSQAKTKJ5EAABAAAAABY8 \\
-    TASK_SOURCE_PATH=metadata/benchmarks/verify_results/visual_pnp/MVUCSQAKTKJ5EAABAAAAABY8/valid_tasks.json \\
-    ORIGINAL_TASK_PATH=metadata/benchmarks/visual_pnp.json \\
+    DEMO_TASK_CONFIG=configs/demo_task.yaml \\
     TRAJ_PATH=eval_output_debug \\
     PORT=8080 \\
-    python -m eval_server.mcp_server_debug
+    python -m mcp_server.mcp_server_debug
+
+Or simply:
+    ./run_mcp_server_debug.sh
 """
 
 import asyncio
@@ -34,14 +34,12 @@ import uvicorn
 
 os.environ.setdefault('IS_TEST', '0')
 
-# Import debug env first, then alias it as eval_server.mcp_env in sys.modules.
-# This prevents actions.py (which does `from eval_server.mcp_env import ...`)
-# from triggering a second simulation initialization.
+# Alias mcp_env_debug as mcp_server.mcp_env so actions.py shares this instance.
 import sys
-import eval_server.mcp_env_debug as _mcp_env_module
-sys.modules['eval_server.mcp_env'] = _mcp_env_module
+import mcp_server.mcp_env_debug as _mcp_env_module
+sys.modules['mcp_server.mcp_env'] = _mcp_env_module
 
-from eval_server.mcp_env_debug import (
+from mcp_server.mcp_env_debug import (
     env,
     camera,
     processed_eval_episodes,
@@ -49,9 +47,9 @@ from eval_server.mcp_env_debug import (
     TARGET_SCENE_ID,
     object_per_room,
 )
-from eval_server.perception_utils import init_annotators, get_rgb_image
-from eval_server.tools import MCP_TOOLS
-from eval_server.actions import (
+from mcp_server.perception_utils import init_annotators, get_rgb_image
+from mcp_server.tools import MCP_TOOLS
+from mcp_server.actions import (
     EvalState,
     dispatch_action,
     step_simulation,

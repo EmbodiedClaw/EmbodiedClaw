@@ -18,21 +18,21 @@ import numpy as np
 from PIL import Image as PILImage
 from pxr import UsdPhysics
 
-from eval_server.mcp_env import (
-    compute_path_bbox,
+from internutopia.core.util.omni_usd_util import compute_path_bbox
+from internutopia_extension.utils.camera_utils import (
     track_object,
     calculate_look_at_quaternion_fixed_camera,
+)
+from mcp_server.mcp_env import (
     nav_manager,
     camera_prim,
     object_per_room,
     furniture_names as ALL_FURNITURES,
     furniture_prims as FURNITURE_PRIMS,
-    query_object_category,
-    spawn_objects_by_world_graph,
 )
-from eval_server.perception_utils import (
-    show_object_by_category_v2,
-    show_receptacles,
+from mcp_server.perception_utils import (
+    find_objects,
+    highlight_receptacles,
     render_persisted_markers,
     get_rgb_image,
 )
@@ -57,10 +57,6 @@ class EvalState:
     precomputed_nav_positions: Dict[str, Tuple[Any, Any]] = field(default_factory=dict)
 
 
-NAV_POSITION_JSONL_PATH = (
-    "/cpfs/user/miboyu/sft/eval_gen/benchmark_splits/misc/nav_position.jsonl"
-)
-IS_TEST = os.getenv("IS_TEST", "0") == "1"
 
 
 # =============================================================================
@@ -161,26 +157,6 @@ def get_rgb_observation() -> np.ndarray:
     """Get RGB image from replicator annotator."""
     return get_rgb_image()
 
-
-def load_precomputed_nav_positions() -> Dict[str, Tuple[Any, Any]]:
-    """Load precomputed nav positions from jsonl file."""
-    fur2pos: Dict[str, Tuple[Any, Any]] = {}
-    if not os.path.exists(NAV_POSITION_JSONL_PATH):
-        return fur2pos
-
-    with open(NAV_POSITION_JSONL_PATH, 'r') as f:
-        for line in f:
-            if line.strip() == '':
-                continue
-            data = json.loads(line)
-            fur2pos[data['receptacle_name']] = (
-                data.get('nav_position'),
-                data.get('camera_orientation'),
-            )
-
-    return fur2pos
-
-
 def image_to_base64(pil_image: PILImage) -> str:
     """Convert a PIL image to base64-encoded PNG string."""
     if pil_image.mode != 'RGB':
@@ -220,7 +196,7 @@ def get_debug_info(state: EvalState) -> dict:
 # Action Handlers
 # =============================================================================
 
-def handle_check_scene_objects(
+def handle_list_receptacles(
     state: EvalState, env, arguments: dict
 ) -> Tuple[str, str]:
     """List all receptacles by room."""
@@ -233,11 +209,11 @@ def handle_check_scene_objects(
     return "text", receptacle_info
 
 
-def handle_show_object_by_category(
+def handle_find_objects(
     state: EvalState, env, arguments: dict
 ) -> Tuple[str, str]:
     """Detect and highlight objects of a category in the current view."""
-    result_image, marker2component = show_object_by_category_v2(
+    result_image, marker2component = find_objects(
         arguments['target_category'],
         state.current_extra_assets,
     )
@@ -248,12 +224,12 @@ def handle_show_object_by_category(
     return "image", image_to_base64(result_image)
 
 
-def handle_show_receptacles(
+def handle_highlight_receptacles(
     state: EvalState, env, arguments: dict
 ) -> Tuple[str, str]:
     """Highlight all receptacle objects in the current view."""
     state.persist_marker_map_on_gaze = False
-    result_image, marker2component = show_receptacles(
+    result_image, marker2component = highlight_receptacles(
         furniture_prims=FURNITURE_PRIMS,
         furniture_names=ALL_FURNITURES,
     )
@@ -263,68 +239,17 @@ def handle_show_receptacles(
     return "image", image_to_base64(result_image)
 
 
-def handle_nav_to(
+def handle_navigate_to(
     state: EvalState, env, arguments: dict
 ) -> Tuple[str, str]:
     """Navigate camera to a furniture receptacle."""
     state.persist_marker_map_on_gaze = False
+    state.current_marker_map = None
     target_furniture_name = arguments['receptacle_name']
 
     # Eval/Test mode: use precomputed nav positions when available.
     # Action-level is_test has higher priority than global default.
-    is_test = bool(arguments.get('is_test', IS_TEST))
-    if is_test:
-        if not state.precomputed_nav_positions:
-            state.precomputed_nav_positions = load_precomputed_nav_positions()
-
-        if target_furniture_name not in state.precomputed_nav_positions:
-            return "text", (
-                f"Receptacle {target_furniture_name} not found in the precomputed positions."
-            )
-
-        nav_position, camera_orientation = state.precomputed_nav_positions[target_furniture_name]
-
-        # If orientation is missing in precomputed table, compute it from top_shelf center.
-        if camera_orientation is None:
-            nav_target = env.runner.current_tasks[env._current_task_name].objects.get(target_furniture_name)
-            if nav_target is None:
-                return "text", f"Receptacle {target_furniture_name} not found in the scene."
-
-            surface_component = nav_target.components.get("top_shelf")
-            if surface_component is None:
-                return "text", (
-                    f"Object {target_furniture_name} has no valid top_shelf component "
-                    "for computing camera orientation."
-                )
-
-            prim_path = surface_component.prim_path
-            if 'Constraint' in prim_path:
-                prim_path = prim_path.replace('Constraint', 'Group')
-
-            target_center, _, _ = compute_nav_target_params(prim_path)
-            camera_orientation = calculate_look_at_quaternion_fixed_camera(
-                nav_position,
-                target_center,
-            )
-
-        if nav_position is None or camera_orientation is None:
-            return "text", (
-                f"Invalid precomputed nav pose for receptacle {target_furniture_name}."
-            )
-
-        camera_prim.set_world_pose(
-            position=(nav_position[0], nav_position[1], nav_position[2]),
-            orientation=camera_orientation,
-        )
-
-        state.current_landmark = target_furniture_name
-        state.current_pos = nav_position
-        state.camera_orientation = camera_orientation
-
-        step_simulation(env, 50)
-
-        return "image", rgb_array_to_base64(get_rgb_observation())
-
+    
     nav_target = env.runner.current_tasks[env._current_task_name].objects.get(target_furniture_name)
     if nav_target is None:
         return "text", f"Receptacle {target_furniture_name} not found in the scene."
@@ -406,12 +331,12 @@ def handle_nav_to(
     return "image", rgb_array_to_base64(get_rgb_observation())
 
 
-def handle_walk_around(
+def handle_explore_receptacle(
     state: EvalState, env, arguments: dict
 ) -> Tuple[str, str]:
     """List objects on current furniture."""
     if state.current_landmark is None:
-        return "text", "No landmark selected for walking around."
+        return "text", "No landmark selected. Use 'navigate_to' first."
 
     content = state.world_graph.get(state.current_landmark, {}).get('content', [])
     if len(content) == 0:
@@ -419,12 +344,14 @@ def handle_walk_around(
 
     walkaround_result = {}
     nl_result = "I found the following object(s): \n"
-    for idx, obj_name in enumerate(content):
+    label_index = 1
+    for obj_name in content:
         if obj_name not in state.current_extra_assets:
             continue
         obj_category = state.current_extra_assets[obj_name]['category']
-        walkaround_result[str(idx)] = obj_name
-        nl_result += f"\t{idx}: a(an) {obj_category}.\n"
+        walkaround_result[str(label_index)] = obj_name
+        nl_result += f"\t{label_index}: a(an) {obj_category}.\n"
+        label_index += 1
 
     state.current_marker_map = walkaround_result
     state.persist_marker_map_on_gaze = True
@@ -432,12 +359,12 @@ def handle_walk_around(
     return "text", nl_result
 
 
-def handle_gaze_at(
+def handle_focus_on(
     state: EvalState, env, arguments: dict
 ) -> Tuple[str, str]:
     """Focus camera on a specific marker/object."""
     if state.current_marker_map is None:
-        return "text", "No marker map available to gaze at."
+        return "text", "No marker map available. Use 'find_objects' or 'explore_receptacle' first."
 
     marker_id = str(arguments['marker_id'])
     if marker_id not in state.current_marker_map:
@@ -449,9 +376,12 @@ def handle_gaze_at(
     ].objects.get(obj_name)
 
     if gaze_target is None:
-        return "text", f"Object {obj_name} is not available. Cannot gaze at it."
+        return "text", f"Object {obj_name} is not available. Cannot focus on it."
 
     comp = gaze_target.components.get("graspable")
+    if comp is None:
+        return "text", f"Object {obj_name} has no graspable component. Cannot focus on it."
+
     target_center, target_radius, radius_lower_bound = compute_nav_target_params(comp.prim_path)
 
     nav_position = nav_manager.get_camera_position_snug(
@@ -466,9 +396,16 @@ def handle_gaze_at(
     if nav_position is None:
         nav_position = state.current_pos
 
+    if nav_position is None:
+        return "text", "No camera position available. Use 'navigate_to' first."
+
+    camera_orientation = state.camera_orientation
+    if camera_orientation is None:
+        return "text", "No camera orientation available. Use 'navigate_to' first."
+
     camera_prim.set_world_pose(
         position=(nav_position[0], nav_position[1], nav_position[2]),
-        orientation=state.camera_orientation,
+        orientation=camera_orientation,
     )
 
     track_object(
@@ -502,8 +439,10 @@ def handle_pick(
 ) -> Tuple[str, str]:
     """Pick up an object by marker id."""
     state.persist_marker_map_on_gaze = False
+    if state.current_inv is not None:
+        return "text", f"You are already holding '{state.current_inv}'. Place it before picking another object."
     if state.current_marker_map is None:
-        return "text", "No marker map available. Use 'show_object_by_category', 'walk_around' or 'show_receptacles' first."
+        return "text", "No marker map available. Use 'find_objects', 'explore_receptacle' or 'highlight_receptacles' first."
 
     marker_id = str(arguments['marker_id'])
     if marker_id not in state.current_marker_map:
@@ -549,7 +488,7 @@ def handle_place(
     """Place held object on a receptacle surface."""
     state.persist_marker_map_on_gaze = False
     if state.current_marker_map is None:
-        return "text", "No marker map available. Use 'show_receptacles' first."
+        return "text", "No marker map available. Use 'highlight_receptacles' first."
 
     marker_id = str(arguments['marker_id'])
     if marker_id not in state.current_marker_map:
@@ -564,9 +503,11 @@ def handle_place(
         target_name not in state.world_graph
         or 'potlid' in target_name.lower()
         or 'content' not in state.world_graph[target_name]
-        or state.world_graph[target_name].get('door') is False
     ):
-        return "text", "Cannot place object into a closed receptacle."
+        return "text", f"'{target_name}' is not a valid placement surface."
+
+    if state.world_graph[target_name].get('door') is False:
+        return "text", f"The door of '{target_name}' is closed. Use 'open' first."
 
     target_surface_furniture = env.runner.current_tasks[env._current_task_name].objects.get(target_name)
     if target_surface_furniture is None:
@@ -579,6 +520,8 @@ def handle_place(
     target_object = env.runner.current_tasks[
         env._current_task_name
     ].objects.get(state.current_inv)
+    if target_object is None:
+        return "text", f"Held object '{state.current_inv}' not found in the scene."
 
     obj_bbox = compute_path_bbox(target_object.components.get("graspable").prim_path)
     surf_bbox = compute_path_bbox(surface_comp.prim_path)
@@ -617,13 +560,13 @@ def handle_open(
 
     try:
         if (
-            'door' in state.world_graph.get(state.current_landmark, {})
-            and state.world_graph[state.current_landmark]['door'] is False
+            'door' in state.world_graph.get(target_name, {})
+            and state.world_graph[target_name]['door'] is False
         ):
             target_door_furniture = env.runner.current_tasks[env._current_task_name].objects.get(target_name)
             door_comp = target_door_furniture.components.get("door")
             door_comp.set_angle(90)
-            state.world_graph[state.current_landmark]['door'] = True
+            state.world_graph[target_name]['door'] = True
     except Exception as e:
         print(f"[WARN] Error opening door: {e}")
 
@@ -645,14 +588,17 @@ def handle_close(
 
     target_name = state.current_marker_map[marker_id]
 
-    if (
-        'door' in state.world_graph.get(state.current_landmark, {})
-        and state.world_graph[state.current_landmark]['door'] is True
-    ):
-        target_door_furniture = env.runner.current_tasks[env._current_task_name].objects.get(target_name)
-        door_comp = target_door_furniture.components.get("door")
-        door_comp.set_angle(0)
-        state.world_graph[state.current_landmark]['door'] = False
+    try:
+        if (
+            'door' in state.world_graph.get(target_name, {})
+            and state.world_graph[target_name]['door'] is True
+        ):
+            target_door_furniture = env.runner.current_tasks[env._current_task_name].objects.get(target_name)
+            door_comp = target_door_furniture.components.get("door")
+            door_comp.set_angle(0)
+            state.world_graph[target_name]['door'] = False
+    except Exception as e:
+        print(f"[WARN] Error closing door: {e}")
 
     step_simulation(env, 100)
 
@@ -664,12 +610,12 @@ def handle_close(
 # =============================================================================
 
 ACTION_HANDLERS = {
-    "check_scene_objects": handle_check_scene_objects,
-    "show_object_by_category": handle_show_object_by_category,
-    "show_receptacles": handle_show_receptacles,
-    "nav_to": handle_nav_to,
-    "walk_around": handle_walk_around,
-    "gaze_at": handle_gaze_at,
+    "list_receptacles": handle_list_receptacles,
+    "find_objects": handle_find_objects,
+    "highlight_receptacles": handle_highlight_receptacles,
+    "navigate_to": handle_navigate_to,
+    "explore_receptacle": handle_explore_receptacle,
+    "focus_on": handle_focus_on,
     "pick": handle_pick,
     "place": handle_place,
     "open": handle_open,

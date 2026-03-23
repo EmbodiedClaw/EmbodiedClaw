@@ -36,3 +36,5 @@ traj_output/
 
 # Secrets
 .env
+assets
+.claude

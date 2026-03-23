@@ -10,7 +10,7 @@ OPENAI_TOOLS = [
     {
         "type": "function",
         "function": {
-            "name": "check_scene_objects",
+            "name": "list_receptacles",
             "description": "list all receptacles and their positions in the scene.",
             "parameters": {
                 "type": "object",
@@ -22,7 +22,7 @@ OPENAI_TOOLS = [
     {
         "type": "function",
         "function": {
-            "name": "nav_to",
+            "name": "navigate_to",
             "description": "navigate to a receptacle",
             "parameters": {
                 "type": "object",
@@ -39,7 +39,7 @@ OPENAI_TOOLS = [
     {
         "type": "function",
         "function": {
-            "name": "walk_around",
+            "name": "explore_receptacle",
             "description": "walk around the current receptacle to get all objects on top of it.",
             "parameters": {
                 "type": "object",
@@ -51,7 +51,7 @@ OPENAI_TOOLS = [
     {
         "type": "function",
         "function": {
-            "name": "gaze_at",
+            "name": "focus_on",
             "description": "gaze at an object for manipulation in your current marker_id space.",
             "parameters": {
                 "type": "object",
@@ -68,8 +68,8 @@ OPENAI_TOOLS = [
     {
         "type": "function",
         "function": {
-            "name": "show_object_by_category",
-            "description": "detect objects of a category in your view and show their names.",
+            "name": "find_objects",
+            "description": "find and highlight objects of a given category in your current view.",
             "parameters": {
                 "type": "object",
                 "required": ["target_category"],
@@ -85,7 +85,7 @@ OPENAI_TOOLS = [
     {
         "type": "function",
         "function": {
-            "name": "show_receptacles",
+            "name": "highlight_receptacles",
             "description": "highlight all receptacle objects in your view.",
             "parameters": {
                 "type": "object",
@@ -196,7 +196,7 @@ OPENAI_TOOLS = [
 # MCP tool format
 MCP_TOOLS = [
     types.Tool(
-        name="check_scene_objects",
+        name="list_receptacles",
         description="list all receptacles and their positions in the scene.",
         inputSchema={
             "type": "object",
@@ -205,7 +205,7 @@ MCP_TOOLS = [
         },
     ),
     types.Tool(
-        name="nav_to",
+        name="navigate_to",
         description="navigate to a receptacle",
         inputSchema={
             "type": "object",
@@ -219,7 +219,7 @@ MCP_TOOLS = [
         },
     ),
     types.Tool(
-        name="walk_around",
+        name="explore_receptacle",
         description="walk around the current receptacle to get all objects on top of it.",
         inputSchema={
             "type": "object",
@@ -228,7 +228,7 @@ MCP_TOOLS = [
         },
     ),
     types.Tool(
-        name="gaze_at",
+        name="focus_on",
         description="gaze at an object for manipulation in your current marker_id space.",
         inputSchema={
             "type": "object",
@@ -242,8 +242,8 @@ MCP_TOOLS = [
         },
     ),
     types.Tool(
-        name="show_object_by_category",
-        description="detect objects of a category in your view and show their names.",
+        name="find_objects",
+        description="find and highlight objects of a given category in your current view.",
         inputSchema={
             "type": "object",
             "properties": {
@@ -256,7 +256,7 @@ MCP_TOOLS = [
         },
     ),
     types.Tool(
-        name="show_receptacles",
+        name="highlight_receptacles",
         description="highlight all receptacle objects in your view.",
         inputSchema={
             "type": "object",
@@ -318,29 +318,6 @@ MCP_TOOLS = [
                 },
             },
             "required": ["marker_id"],
-        },
-    ),
-    types.Tool(
-        name="finish",
-        description="you must call this tool to finish the episode when you think you have completed all the instructions.",
-        inputSchema={
-            "type": "object",
-            "properties": {},
-            "required": [],
-        },
-    ),
-    types.Tool(
-        name="ask",
-        description="ask the user a question to get more information about the task.",
-        inputSchema={
-            "type": "object",
-            "properties": {
-                "question": {
-                    "type": "string",
-                    "description": "the question to ask the user",
-                }
-            },
-            "required": ["question"],
         },
     ),
 ]

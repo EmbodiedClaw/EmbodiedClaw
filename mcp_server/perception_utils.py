@@ -88,14 +88,14 @@ def get_rgb_and_segmentation():
     return rgb_data, instance_seg_data
 
 
-def show_object_by_category(
+def _find_objects_exact(
     target_category: str,
     current_assets: dict,
     camera=None,
     predefined_markers: dict = None,
 ) -> tuple:
     """
-    Show objects matching the target category with visual markers.
+    Find and highlight objects matching the target category (exact match).
 
     Args:
         target_category: The category to search for (GT category, exact match)
@@ -214,14 +214,14 @@ def _get_embedding(text: str) -> np.ndarray:
     return vec
 
 
-def show_object_by_category_v2(
+def find_objects(
     target_category: str,
     current_assets: dict,
     camera=None,
     predefined_markers: dict = None,
 ) -> tuple:
     """
-    Show objects matching the target category with visual markers,
+    Find and highlight objects matching the target category with visual markers,
     using embedding similarity for fuzzy category matching.
 
     When the agent's query (target_category) does not exactly match any
@@ -274,7 +274,7 @@ def show_object_by_category_v2(
         similarities[category] = similarity
 
     matched_category = max(similarities, key=similarities.get)
-    print(f"[show_object_by_category_v2] query='{target_category}' -> matched='{matched_category}' "
+    print(f"[find_objects] query='{target_category}' -> matched='{matched_category}' "
           f"(sim={similarities[matched_category]:.4f})")
 
     # Find target objects by matched category
@@ -345,7 +345,7 @@ def show_object_by_category_v2(
         return observation, {}
 
 
-def show_receptacles(
+def highlight_receptacles(
     furniture_prims: list,
     furniture_names: list,
     hidden_target: str = '',
@@ -443,9 +443,9 @@ def render_persisted_markers(
     """
     Re-render persisted marker overlays on the current view.
 
-    Unlike show_object_by_category which filters by category first,
+    Unlike find_objects which filters by category first,
     this function renders markers for specific objects by name,
-    regardless of category. Used for marker map persistence after gaze_at.
+    regardless of category. Used for marker map persistence after focus_on.
 
     Args:
         predefined_markers: Dict mapping object_name -> marker_id
