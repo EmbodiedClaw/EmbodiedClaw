@@ -80,13 +80,9 @@ assert os.path.exists(SCENE_USD_PATH), f"Scene USD not found: {SCENE_USD_PATH}"
 OCC_MAP_PATH: Path = _resolve(_paths['occ_map_dir'])
 assert OCC_MAP_PATH.exists(), f"Occ map dir not found: {OCC_MAP_PATH}"
 
-# Furniture library
-FURNITURE_LIB_PATH = str(_resolve(_paths['furniture_lib']))
-
 print(f"[mcp_env_debug] config          = {_cfg_path}")
 print(f"[mcp_env_debug] SCENE_USD_PATH  = {SCENE_USD_PATH}")
 print(f"[mcp_env_debug] OCC_MAP_PATH    = {OCC_MAP_PATH}")
-print(f"[mcp_env_debug] FURNITURE_LIB   = {FURNITURE_LIB_PATH}")
 
 # =============================================================================
 # Object registry — built from objects section in config
@@ -104,7 +100,8 @@ for _obj_name, _obj_cfg in _task_cfg.get('objects', {}).items():
 
 from internutopia_extension.configs.objects import InteractiveObjCfg, UsdObjCfg
 
-scene_anno = json.load(open(FURNITURE_LIB_PATH))
+_furniture_lib_path = _paths.get('furniture_lib')
+scene_anno = json.load(open(_resolve(_furniture_lib_path))) if _furniture_lib_path else {}
 
 # Scene captions are optional
 _anno_path = os.environ.get('SCENE_ANNO_PATH', '')
