@@ -100,8 +100,8 @@ for _obj_name, _obj_cfg in _task_cfg.get('objects', {}).items():
 
 from internutopia_extension.configs.objects import InteractiveObjCfg, UsdObjCfg
 
-_furniture_lib_path = _paths.get('furniture_lib')
-scene_anno = json.load(open(_resolve(_furniture_lib_path))) if _furniture_lib_path else {}
+_furniture_lib_path = _resolve(_paths['furniture_lib'])
+scene_anno = json.load(open(_furniture_lib_path))
 
 # Scene captions are optional
 _anno_path = os.environ.get('SCENE_ANNO_PATH', '')

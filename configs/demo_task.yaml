@@ -9,7 +9,7 @@ scene_id: MVUCSQAKTKJ5EAABAAAAABY8
 paths:
   scene_usd:     assets/scenes/MVUCSQAKTKJ5EAABAAAAABY8_usd/scene.usd
   occ_map_dir:   assets/metadata/MVUCSQAKTKJ5EAABAAAAABY8
-  # furniture_lib: path/to/scene_furniture_library.json  # optional
+  furniture_lib: assets/metadata/MVUCSQAKTKJ5EAABAAAAABY8/scene_furniture_library.json
 
 # Object asset definitions (usd_path relative to repo root, position in world-space meters)
 objects:
