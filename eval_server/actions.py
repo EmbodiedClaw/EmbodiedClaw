@@ -16,8 +16,8 @@ from typing import Dict, List, Tuple, Any, Optional
 
 import numpy as np
 from PIL import Image as PILImage
+from pxr import UsdPhysics
 
-from eval_server import config
 from eval_server.mcp_env import (
     compute_path_bbox,
     track_object,
@@ -57,7 +57,9 @@ class EvalState:
     precomputed_nav_positions: Dict[str, Tuple[Any, Any]] = field(default_factory=dict)
 
 
-NAV_POSITION_JSONL_PATH = config.get_nav_position_path()
+NAV_POSITION_JSONL_PATH = (
+    "/cpfs/user/miboyu/sft/eval_gen/benchmark_splits/misc/nav_position.jsonl"
+)
 IS_TEST = os.getenv("IS_TEST", "0") == "1"
 
 
@@ -65,19 +67,44 @@ IS_TEST = os.getenv("IS_TEST", "0") == "1"
 # Helpers
 # =============================================================================
 
+def _ensure_playing():
+    """Resume the Isaac Sim timeline if it was stopped (e.g. after USD stage edits)."""
+    import omni.timeline
+    timeline = omni.timeline.get_timeline_interface()
+    if not timeline.is_playing():
+        timeline.play()
+
+
 def step_simulation(env, n_steps: int = 1):
     """Step the simulation and return the last observation."""
+    _ensure_playing()
     obs = None
     for _ in range(n_steps):
         obs, *_ = env.step([{}])
     return obs
 
 
+def _set_rigid_body_enabled(prim_path: str, enabled: bool):
+    """Enable or disable rigid body physics via USD API (avoids tensor view issues)."""
+    from omni.isaac.core.utils.stage import get_current_stage
+    stage = get_current_stage()
+    prim = stage.GetPrimAtPath(prim_path)
+    if prim.IsValid() and prim.HasAPI(UsdPhysics.RigidBodyAPI):
+        UsdPhysics.RigidBodyAPI(prim).GetRigidBodyEnabledAttr().Set(enabled)
+
+
 def compute_nav_target_params(prim_path: str) -> Tuple[tuple, float, float]:
-    """Compute navigation target parameters (center, radius, lower_bound)."""
+    """Compute navigation target parameters (center, radius, lower_bound).
+
+    Returns None for all values if the bbox is degenerate (e.g. empty prim).
+    """
     obj_min_point, obj_max_point = compute_path_bbox(prim_path)
     min_x, min_y, min_z = obj_min_point
     max_x, max_y, max_z = obj_max_point
+
+    # Detect degenerate bbox (e.g. FLT_MAX values from empty/invalid prims)
+    if abs(min_x) > 1e30 or abs(max_x) > 1e30 or abs(min_y) > 1e30 or abs(max_y) > 1e30:
+        return None, None, None
 
     target_center = (
         (min_x + max_x) / 2,
@@ -259,11 +286,11 @@ def handle_nav_to(
 
         # If orientation is missing in precomputed table, compute it from top_shelf center.
         if camera_orientation is None:
-            nav_target = env.runner.get_task_obj(target_furniture_name)
+            nav_target = env.runner.current_tasks[env._current_task_name].objects.get(target_furniture_name)
             if nav_target is None:
                 return "text", f"Receptacle {target_furniture_name} not found in the scene."
 
-            surface_component = nav_target.get_component("top_shelf")
+            surface_component = nav_target.components.get("top_shelf")
             if surface_component is None:
                 return "text", (
                     f"Object {target_furniture_name} has no valid top_shelf component "
@@ -298,12 +325,12 @@ def handle_nav_to(
 
         return "image", rgb_array_to_base64(get_rgb_observation())
 
-    nav_target = env.runner.get_task_obj(target_furniture_name)
+    nav_target = env.runner.current_tasks[env._current_task_name].objects.get(target_furniture_name)
     if nav_target is None:
         return "text", f"Receptacle {target_furniture_name} not found in the scene."
 
-    surface_component = nav_target.get_component("top_shelf")
-    door_component = nav_target.get_component("door")
+    surface_component = nav_target.components.get("top_shelf")
+    door_component = nav_target.components.get("door")
 
     if surface_component is None and door_component is None:
         return "text", f"Object {target_furniture_name} has no valid navigable component."
@@ -319,13 +346,45 @@ def handle_nav_to(
 
     target_center, target_radius, radius_lower_bound = compute_nav_target_params(prim_path)
 
-    nav_position = nav_manager.get_camera_position_snug(
-        target_component_prim_path=prim_path,
+    # Fallback: if component bbox is degenerate, use the parent object's prim
+    if target_center is None:
+        print(f"  Component bbox degenerate for {prim_path}, falling back to parent: {nav_target.prim_path}")
+        prim_path = nav_target.prim_path
+        target_center, target_radius, radius_lower_bound = compute_nav_target_params(prim_path)
+
+    if target_center is None:
+        return "text", f"Cannot compute bounding box for {target_furniture_name}."
+
+    # --- Debug info ---
+    print(f"  [nav_debug] furniture={target_furniture_name}")
+    print(f"  [nav_debug] components={list(nav_target.components.keys())}")
+    print(f"  [nav_debug] prim_path={prim_path}")
+    print(f"  [nav_debug] parent_prim_path={nav_target.prim_path}")
+    print(f"  [nav_debug] target_center={target_center}, target_radius={target_radius:.3f}, radius_lower_bound={radius_lower_bound:.3f}")
+    obj_min_point, obj_max_point = compute_path_bbox(prim_path)
+    print(f"  [nav_debug] bbox_min={tuple(obj_min_point)}, bbox_max={tuple(obj_max_point)}")
+    # Also print parent bbox for comparison
+    if prim_path != nav_target.prim_path:
+        p_min, p_max = compute_path_bbox(nav_target.prim_path)
+        print(f"  [nav_debug] parent_bbox_min={tuple(p_min)}, parent_bbox_max={tuple(p_max)}")
+    # --- End debug ---
+
+    # Use the furniture category path (common ancestor) for occlusion testing,
+    # so that sibling objects of the same type (e.g. two washingmachines next to
+    # each other) are not treated as occluders.
+    parent_prim = nav_target.prim_path
+    # Go one level up from e.g. ".../washingmachine/model_xxx" to ".../washingmachine/"
+    category_prim_path = parent_prim.rsplit('/', 1)[0] + '/'
+
+    nav_position = nav_manager.get_camera_position_by_seg(
+        target_component_prim_path=category_prim_path,
         target_x=target_center[0],
         target_y=target_center[1],
+        target_z=target_center[2],
         target_radius=target_radius,
         radius_lower_bound=radius_lower_bound,
-        debug_file_name=None,
+        camera_prim=camera_prim,
+        debug_file_name=f"nav_test_output/debug_{target_furniture_name}",
     )
 
     if nav_position is None:
@@ -386,13 +445,13 @@ def handle_gaze_at(
 
     obj_name = state.current_marker_map[marker_id]
     gaze_target = env.runner.current_tasks[
-        env.runner.current_task_name
-    ].scene.get_object(obj_name)
+        env._current_task_name
+    ].objects.get(obj_name)
 
     if gaze_target is None:
         return "text", f"Object {obj_name} is not available. Cannot gaze at it."
 
-    comp = gaze_target.get_component("graspable")
+    comp = gaze_target.components.get("graspable")
     target_center, target_radius, radius_lower_bound = compute_nav_target_params(comp.prim_path)
 
     nav_position = nav_manager.get_camera_position_snug(
@@ -452,21 +511,21 @@ def handle_pick(
 
     target_name = state.current_marker_map[marker_id]
     obj = env.runner.current_tasks[
-        env.runner.current_task_name
-    ].scene.get_object(target_name)
+        env._current_task_name
+    ].objects.get(target_name)
 
     if obj is None:
         return "text", f"Object {target_name} is not graspable. Cannot pick it up."
 
-    target_component = obj.get_component("graspable")
+    target_component = obj.components.get("graspable")
     if target_component is None:
         return "text", f"Object {target_name} has no graspable component."
 
     # Execute pick
+    _set_rigid_body_enabled(target_component.prim_path, False)
     obj.set_world_pose((-100, -100, 0))
     step_simulation(env, 20)
     obj.set_visibility(visible=False)
-    target_component.prim.disable_rigid_body_physics()
 
     # Update world graph
     for furniture_name in state.world_graph:
@@ -509,29 +568,29 @@ def handle_place(
     ):
         return "text", "Cannot place object into a closed receptacle."
 
-    target_surface_furniture = env.runner.get_task_obj(target_name)
+    target_surface_furniture = env.runner.current_tasks[env._current_task_name].objects.get(target_name)
     if target_surface_furniture is None:
         return "text", f"Target furniture {target_name} not found in the scene."
 
-    surface_comp = target_surface_furniture.get_component("top_shelf")
+    surface_comp = target_surface_furniture.components.get("top_shelf")
     if surface_comp is None:
         return "text", f"Furniture {target_name} has no top_shelf component."
 
     target_object = env.runner.current_tasks[
-        env.runner.current_task_name
-    ].scene.get_object(state.current_inv)
+        env._current_task_name
+    ].objects.get(state.current_inv)
 
-    obj_bbox = compute_path_bbox(target_object.get_component("graspable").prim_path)
+    obj_bbox = compute_path_bbox(target_object.components.get("graspable").prim_path)
     surf_bbox = compute_path_bbox(surface_comp.prim_path)
 
     placement_pos = compute_placement_position(obj_bbox, surf_bbox, state.current_pos)
 
     # Execute placement
     _, rot = target_object.get_world_pose()
-    target_object.get_component("graspable").prim.enable_rigid_body_physics()
+    _set_rigid_body_enabled(target_object.components.get("graspable").prim_path, True)
     target_object.set_world_pose(placement_pos, rot)
     target_object.set_visibility(visible=True)
-    target_object.get_component("graspable").attached = False
+    target_object.components.get("graspable").attached = False
 
     # Update world graph
     state.world_graph[target_name]['content'].append(state.current_inv)
@@ -561,8 +620,8 @@ def handle_open(
             'door' in state.world_graph.get(state.current_landmark, {})
             and state.world_graph[state.current_landmark]['door'] is False
         ):
-            target_door_furniture = env.runner.get_task_obj(target_name)
-            door_comp = target_door_furniture.get_component("door")
+            target_door_furniture = env.runner.current_tasks[env._current_task_name].objects.get(target_name)
+            door_comp = target_door_furniture.components.get("door")
             door_comp.set_angle(90)
             state.world_graph[state.current_landmark]['door'] = True
     except Exception as e:
@@ -590,8 +649,8 @@ def handle_close(
         'door' in state.world_graph.get(state.current_landmark, {})
         and state.world_graph[state.current_landmark]['door'] is True
     ):
-        target_door_furniture = env.runner.get_task_obj(target_name)
-        door_comp = target_door_furniture.get_component("door")
+        target_door_furniture = env.runner.current_tasks[env._current_task_name].objects.get(target_name)
+        door_comp = target_door_furniture.components.get("door")
         door_comp.set_angle(0)
         state.world_graph[state.current_landmark]['door'] = False
 

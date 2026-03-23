@@ -1,7 +1,18 @@
 """
-Environment setup and configuration for evaluation.
-Aligned with replay/mcp_env.py: uses env vars, same asset libraries,
-pre-computed positions from physics verification.
+Debug version of mcp_env.py: non-headless, opens the Isaac Sim GUI window.
+
+Differences from mcp_env.py:
+  - headless=False, native=True  → opens the Omniverse GUI for visual inspection
+  - uses local metadata/ paths   → no dependency on /cpfs/user/miboyu/sft-refactored/
+  - TASK_SOURCE_PATH / ORIGINAL_TASK_PATH are optional (defaults to empty lists)
+  - all_captions load failure is non-fatal
+
+Usage:
+    HEADLESS=0 TARGET_SCENE_ID=... TASK_SOURCE_PATH=... ORIGINAL_TASK_PATH=... \\
+        python -m eval_server.mcp_server_debug
+
+Or import directly:
+    from eval_server.mcp_env_debug import env, camera, processed_eval_episodes, ...
 """
 
 import os
@@ -23,14 +34,21 @@ TRAIN_SCENE_IDS = [
 TEST_SCENE_IDS = ['MVUCSQAKTKJ5EAABAAAAABY8']
 
 TARGET_SCENE_ID = os.environ.get('TARGET_SCENE_ID', 'MVUCSQAKTKJ5EAABAAAAABY8')
-TASK_SOURCE_PATH = os.environ['TASK_SOURCE_PATH']
-ORIGINAL_TASK_PATH = os.environ['ORIGINAL_TASK_PATH']
-TRAJ_PATH = Path(os.environ['TRAJ_PATH'])
+TRAJ_PATH = Path(os.environ.get('TRAJ_PATH', 'eval_output_debug'))
+
+TASK_SOURCE_PATH = os.environ.get('TASK_SOURCE_PATH', '')
+ORIGINAL_TASK_PATH = os.environ.get('ORIGINAL_TASK_PATH', '')
 
 assert TARGET_SCENE_ID in TRAIN_SCENE_IDS + TEST_SCENE_IDS, \
     f"TARGET_SCENE_ID {TARGET_SCENE_ID} not in predefined scene ids"
+assert TASK_SOURCE_PATH, "TASK_SOURCE_PATH env var is required"
+assert ORIGINAL_TASK_PATH, "ORIGINAL_TASK_PATH env var is required"
+
+EMPTY_USD_PATH = "/cpfs/shared/simulation/liyangzi/grutopia/assets/scenes/empty.usd"
+USE_EMPTY_SCENE = os.environ.get('USE_EMPTY_SCENE', '0') == '1'
 
 SCENE_USD_PATH = (
+    EMPTY_USD_PATH if USE_EMPTY_SCENE else
     f"/cpfs/shared/simulation/liyangzi/grutopia/assets/scenes/"
     f"GRScenes-100/home_scenes/scenes/{TARGET_SCENE_ID}_usd/"
     f"start_result_interaction_noMDL_move.usd"
@@ -39,15 +57,44 @@ OCC_MAP_PATH = Path(f"/cpfs/shared/simulation/miboyu/occ_map/{TARGET_SCENE_ID}")
 assert os.path.exists(SCENE_USD_PATH), f"Scene USD path does not exist: {SCENE_USD_PATH}"
 
 # =============================================================================
+# Data paths — prefer local metadata/, fall back to absolute path
+# =============================================================================
+
+_REPO_ROOT = Path(__file__).parent.parent
+
+def _resolve_data_path(local_rel: str, absolute_fallback: str) -> str:
+    local = _REPO_ROOT / local_rel
+    if local.exists():
+        return str(local)
+    return absolute_fallback
+
+FURNITURE_LIB_PATH = _resolve_data_path(
+    'metadata/scene_furniture_library.json',
+    '/cpfs/user/miboyu/sft-refactored/data/scene_furniture_library.json',
+)
+ASSET_LIB_PATH = _resolve_data_path(
+    'metadata/consolidated_asset_library_with_size.json',
+    '/cpfs/user/miboyu/sft-refactored/data/consolidated_asset_library_with_size.json',
+)
+
+print(f"[mcp_env_debug] FURNITURE_LIB_PATH = {FURNITURE_LIB_PATH}")
+print(f"[mcp_env_debug] ASSET_LIB_PATH     = {ASSET_LIB_PATH}")
+
+# =============================================================================
 # Furniture and scene setup
 # =============================================================================
 
-from internutopia_extension.configs.objects import InteractiveObjCfg
+from internutopia_extension.configs.objects import InteractiveObjCfg, UsdObjCfg
 
-scene_anno = json.load(open('/cpfs/user/miboyu/sft-refactored/data/scene_furniture_library.json'))
-all_captions = json.load(open(
-    f"/cpfs/user/miboyu/sft/data/scene_anno/{TARGET_SCENE_ID}_all_caption_processed.json"
-))
+scene_anno = json.load(open(FURNITURE_LIB_PATH))
+
+# Captions are optional in debug mode
+_caption_path = f"/cpfs/user/miboyu/sft/data/scene_anno/{TARGET_SCENE_ID}_all_caption_processed.json"
+try:
+    all_captions = json.load(open(_caption_path))
+except FileNotFoundError:
+    print(f"[mcp_env_debug] WARNING: captions not found at {_caption_path}, skipping.")
+    all_captions = {}
 
 furnitures = []
 furniture_names = []
@@ -72,65 +119,104 @@ for furniture_uid, furniture_info in scene_anno.items():
     object_per_room[room_name].append(furniture_info['name'])
 
 # =============================================================================
-# Simulation setup
+# Lift robot definition (optional, enabled by USE_LIFT_ROBOT=1)
 # =============================================================================
 
-from internutopia_extension.configs.tasks import (
-    FiniteStepTaskCfg,
-    FiniteStepTaskEpisodeCfg,
-)
-from internutopia_extension.configs.robots.human_avatar import (
-    HumanAvatarCfg,
-    floating_camera_cfg,
+from typing import Optional as _Optional
+from collections import OrderedDict as _OrderedDict
+from internutopia.core.config import RobotCfg
+from internutopia.core.robot.robot import BaseRobot
+from internutopia.core.robot.articulation import IArticulation
+from internutopia.core.scene.scene import IScene
+
+
+class LiftCfg(RobotCfg):
+    name: _Optional[str] = 'lift'
+    type: _Optional[str] = 'Lift'
+    prim_path: _Optional[str] = '/lift'
+    usd_path: _Optional[str] = "/cpfs/shared/simulation/miboyu/lift2/lift2_no_occ.usd"
+
+
+@BaseRobot.register('Lift')
+class LiftRobot(BaseRobot):
+    def __init__(self, config: LiftCfg, scene: IScene):
+        super().__init__(config, scene)
+        self.articulation = IArticulation.create(
+            prim_path=config.prim_path,
+            name=config.name,
+            usd_path=config.usd_path,
+            position=np.array(config.position),
+        )
+
+    def post_reset(self):
+        super().post_reset()
+        print("[LiftRobot] joints:", self.articulation.dof_names)
+        from pxr import UsdPhysics, Usd, PhysxSchema
+        from omni.isaac.core.utils.stage import get_current_stage
+        stage = get_current_stage()
+        root_prim = stage.GetPrimAtPath(self.config.prim_path)
+        for prim in Usd.PrimRange(root_prim):
+            if prim.HasAPI(UsdPhysics.RigidBodyAPI):
+                if not prim.HasAPI(PhysxSchema.PhysxRigidBodyAPI):
+                    PhysxSchema.PhysxRigidBodyAPI.Apply(prim)
+                PhysxSchema.PhysxRigidBodyAPI(prim).GetDisableGravityAttr().Set(True)
+            if prim.HasAPI(UsdPhysics.CollisionAPI):
+                UsdPhysics.CollisionAPI(prim).GetCollisionEnabledAttr().Set(False)
+
+    def apply_action(self, action):
+        if not isinstance(action, dict):
+            return
+        for controller_name, controller_action in action.items():
+            controller = self.controllers[controller_name]
+            control = controller.action_to_control(controller_action)
+            self.articulation.apply_action(control)
+
+    def get_obs(self):
+        position, orientation = self.articulation.get_pose()
+        controllers_obs, sensors_obs = super()._get_controllers_and_sensors_obs()
+        obs = {'position': position, 'orientation': orientation,
+               'controllers': controllers_obs, 'sensors': sensors_obs}
+        obs["joint_velocitis"] = self.articulation.get_joint_velocities()
+        obs["joint_positions"] = self.articulation.get_joint_positions()
+        return self._make_ordered(obs)
+
+
+USE_LIFT_ROBOT = os.environ.get('USE_LIFT_ROBOT', '0') == '1'
+
+lift_cfg = LiftCfg(
+    position=(1.6, -1.3, 0.0),
+    controllers=[],
+    sensors=[],
 )
 
-mocked_robot = HumanAvatarCfg(
-    name='person',
-    position=(1.4, -0.7, 1.05),
-    controllers=[],
-    create_robot=True,
-    usd_path='/cpfs/shared/simulation/miboyu/demo_assets/h1/h1.usd',
-    scale=(0.001, 0.001, 0.001),
-    sensors=[
-        floating_camera_cfg.update(
-            name='floating', resolution=(640, 480), enable=True, depth=True
+# =============================================================================
+# Simulation setup — NON-HEADLESS (GUI window)
+# =============================================================================
+
+from internutopia_extension.configs.tasks import FiniteStepTaskCfg
+from internutopia.core.config import Config, SimConfig
+from internutopia.core.gym_env import Env
+from internutopia_extension import import_extensions
+
+config = Config(
+    simulator=SimConfig(physics_dt=1 / 240, rendering_dt=1 / 240, use_fabric=False, headless=False, webrtc=False),
+    task_configs=[
+        FiniteStepTaskCfg(
+            scene_asset_path=SCENE_USD_PATH,
+            scene_scale=(0.01, 0.01, 0.01),
+            robots=[lift_cfg] if USE_LIFT_ROBOT else [],
+            objects=furnitures,
+            max_steps=int(1e10),
         ),
     ],
 )
 
-episode_cfg = FiniteStepTaskEpisodeCfg(
-    scene_asset_path=SCENE_USD_PATH,
-    scene_scale=(0.01, 0.01, 0.01),
-    robots=[mocked_robot],
-    objects=furnitures,
-    extra={},
-)
-
-from internutopia.core.config import Config, SimConfig
-from internutopia.core.vec_env import Env
-from internutopia.core.runtime import SimulatorRuntime
-
-config = Config(
-    simulator=SimConfig(physics_dt=1 / 240, rendering_dt=1 / 240, use_fabric=False),
-    task_config=FiniteStepTaskCfg(
-        env_num=1,
-        task_settings={'max_step': 1e10},
-        episodes=[episode_cfg],
-    ),
-)
-
-sim_runtime = SimulatorRuntime(
-    config_class=config, headless=True, native=False, webrtc=False
-)
-
-# IMPORTANT: import_extensions() must be called AFTER sim_runtime is initialized
-# and BEFORE importing any internutopia_extension.eba_actions
-from internutopia_extension import import_extensions
+env = Env(config)
 import_extensions()
+obs, _ = env.reset()
+print(f'========INIT OBS{obs}=============')
 
 from internutopia.core.scene.object import create_object
-env = Env(sim_runtime)
-env.reset()
 
 import omni.replicator.core as rep
 
@@ -155,14 +241,10 @@ nav_manager = NavManager(scene_id=TARGET_SCENE_ID)
 # Asset library and task processing
 # =============================================================================
 
-asset_lib = json.load(open(
-    '/cpfs/user/miboyu/sft-refactored/data/consolidated_asset_library_with_size.json'
-))
+asset_lib = json.load(open(ASSET_LIB_PATH))
 
-# Load tasks - merge physics verified positions with original task metadata
 with open(TASK_SOURCE_PATH, 'r') as f:
     physics_tasks = json.load(f)
-
 with open(ORIGINAL_TASK_PATH, 'r') as f:
     original_tasks = json.load(f)
 
@@ -225,7 +307,6 @@ for task in physics_tasks:
     )
     target_category = query_object_category(target_obj_id)
 
-
     obj_distractor_meta = {
         obj_id: original_task['obj_distractor_meta'][obj_id]
         for obj_id in original_task['obj_distractors']
@@ -253,7 +334,7 @@ for task in physics_tasks:
     }
     processed_eval_episodes.append(processed_episode)
 
-print(f"Loaded eval episodes: {len(processed_eval_episodes)}")
+print(f"[mcp_env_debug] Loaded eval episodes: {len(processed_eval_episodes)}")
 
 
 # =============================================================================
@@ -262,15 +343,12 @@ print(f"Loaded eval episodes: {len(processed_eval_episodes)}")
 
 def spawn_objects_by_world_graph(env: Env, episode: dict, current_objects: dict):
     """
-    Spawn objects using statically computed positions from placements.
-
-    Uses the pre-computed placement positions (from static verification stage)
-    rather than physics-settled final_positions, so objects settle naturally
-    through physics simulation after spawning.
+    Spawn objects at their physics-verified final positions (obj_positions),
+    so they sit on furniture immediately without in-simulation physics settling.
 
     Args:
         env: Simulation environment
-        episode: Episode dict containing 'placements', 'task_id'
+        episode: Episode dict containing 'placements', 'obj_positions', 'task_id'
         current_objects: Dict of currently spawned objects to clean up
 
     Returns:
@@ -288,11 +366,21 @@ def spawn_objects_by_world_graph(env: Env, episode: dict, current_objects: dict)
 
     current_objects = {}
 
-    # Spawn objects at statically computed positions (raised slightly for physics settle)
+    # Spawn objects at their physics-verified final positions recorded during
+    # offline verification, so they sit on furniture immediately without
+    # relying on in-simulation physics settling.
+    obj_positions = episode.get('obj_positions', {})
     for obj_name, placement_info in placements.items():
         original_obj_id = placement_info['original_id']
-        pos = placement_info['position']
-        spawn_pos = (pos[0], pos[1], pos[2] + 0.1)
+        if obj_name in obj_positions:
+            fp = obj_positions[obj_name]
+            # Use final_pos XY for accuracy; add a small Z offset so the
+            # object approaches from above, avoiding PhysX depenetration
+            # pushing it downward through the furniture surface.
+            spawn_pos = (fp[0], fp[1], fp[2] + 0.05)
+        else:
+            pos = placement_info['position']
+            spawn_pos = (pos[0], pos[1], pos[2] + 0.1)
 
         obj_meta = asset_lib[original_obj_id]
         category = obj_meta['category']
@@ -317,7 +405,8 @@ def spawn_objects_by_world_graph(env: Env, episode: dict, current_objects: dict)
             "original_id": original_obj_id,
         }
 
-    # Step simulation to settle objects
+    # A few physics steps are required so the engine registers the newly
+    # created rigid bodies before the main loop takes over.
     for _ in range(20):
         env.step(action=[{}])
 

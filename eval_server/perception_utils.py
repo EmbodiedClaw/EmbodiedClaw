@@ -108,7 +108,7 @@ def show_object_by_category(
     Returns:
         (result_image, marker2component) - PIL Image with markers and dict mapping marker IDs to components
     """
-    from internutopia_extension.datagen.som import draw_mask_and_number_on_image
+    from internutopia_extension.utils.som import draw_mask_and_number_on_image
 
     # Initialize annotators if needed
     if _render_product is None and camera is not None:
@@ -238,7 +238,7 @@ def show_object_by_category_v2(
     Returns:
         (result_image, marker2component) - PIL Image with markers and dict mapping marker IDs to components
     """
-    from internutopia_extension.datagen.som import draw_mask_and_number_on_image
+    from internutopia_extension.utils.som import draw_mask_and_number_on_image
 
     # Initialize annotators if needed
     if _render_product is None and camera is not None:
@@ -363,7 +363,7 @@ def show_receptacles(
     Returns:
         (result_image, marker2component) - PIL Image with markers and dict mapping marker IDs to components
     """
-    from internutopia_extension.datagen.som import draw_mask_and_number_on_image
+    from internutopia_extension.utils.som import draw_mask_and_number_on_image
 
     # Initialize annotators if needed
     if _render_product is None and camera is not None:
@@ -454,7 +454,7 @@ def render_persisted_markers(
         (result_image, marker2component) - PIL Image with markers and
         dict mapping marker IDs to VisualPromptingComponent
     """
-    from internutopia_extension.datagen.som import draw_mask_and_number_on_image
+    from internutopia_extension.utils.som import draw_mask_and_number_on_image
 
     rgb_data, instance_seg = get_rgb_and_segmentation()
 
