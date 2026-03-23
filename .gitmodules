@@ -1,3 +1,7 @@
 [submodule "internutopia"]
 	path = internutopia
 	url = git@github.com:EmbodiedClaw/InternUtopia.git
+
+[submodule "nanobot"]
+	path = nanobot
+	url = https://github.com/EmbodiedClaw/nanobot
