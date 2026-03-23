@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=EmbodiedClaw&animation=fadeIn&desc=Bridging%20Agents%20to%20Interactive%20Physical%20Environments&descSize=18&descAlignY=65" alt="EmbodiedClaw banner" />
+  <img src="assets/proj/eclaw-logo.jpg" alt="EmbodiedClaw banner" />
 </p>
 
 <h1 align="center">EmbodiedClaw: Open Framework for Embodied Manipulation Training & Evaluation</h1>
