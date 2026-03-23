@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/proj/eclaw-logo.jpg" alt="EmbodiedClaw banner" />
+  <img src="./assets/proj/eclaw-logo.jpg" alt="EmbodiedClaw banner" />
 </p>
 
 <h1 align="center">EmbodiedClaw: Open Framework for Embodied Manipulation Training & Evaluation</h1>
@@ -36,7 +36,8 @@
 
 
 
-https://github.com/user-attachments/assets/00000000-0000-0000-0000-000000000000
+https://github.com/user-attachments/assets/dbee2203-f745-4068-a9e5-770f3372390e
+
 
 
 
