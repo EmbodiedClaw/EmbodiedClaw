@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/proj/eclaw-logo.jpg" alt="EmbodiedClaw banner" />
+  <img src="docs/eclaw-logo.jpg" alt="EmbodiedClaw banner" />
 </p>
 
 <h1 align="center">EmbodiedClaw: Open Framework for Embodied Manipulation Training & Evaluation</h1>
