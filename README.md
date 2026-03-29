@@ -34,12 +34,7 @@
 
 ## Demo
 
-
-https://github.com/user-attachments/assets/04c5edfc-5bc2-4f0a-8d6c-6e5bdee2b9e8
-
-
-
-
+https://github.com/user-attachments/assets/b5d2424b-9a75-43d2-a33f-d657c9fd28f1
 
 
 
