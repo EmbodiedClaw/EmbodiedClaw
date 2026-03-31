@@ -151,6 +151,109 @@ You can now chat with the agent and issue manipulation commands through the simu
 
 ---
 
+## Task Generation Pipeline
+
+The procedural task generation pipeline lives in `proc_datagen/`. It produces pick-and-place task configs for training and evaluation, in two stages:
+
+```mermaid
+flowchart LR
+    A["task_generator.py\n(task gen + static filter)"]
+    -->|"YAML per\nscene/type"| B["verify_proc.py\n(physics simulation)"]
+    B -->|pass| C["physics_passed.yaml"]
+    B -->|fail| D["physics_failed.yaml"]
+    A -->|"--to-json"| E["JSON files\n(backward compat)"]
+    A -->|"--polish"| A
+```
+
+### Task types
+
+| Type | Description |
+|------|-------------|
+| `basic` | Simple pick-and-place with same-type furniture distractors |
+| `distractor` | Same-category object distractors; uses `detailed_caption` for grounding |
+| `articulation` | Store / retrieve involving articulated furniture (open/close door) |
+| `interactive` | Same-purpose different-category distractors + fuzzy description (requires user interaction to disambiguate) |
+| `gather` | Multi-source gather: collect N objects to one destination |
+
+### Asset setup — MesaTask USD files
+
+The task generator relies on object USD files from the [MesaTask dataset](https://huggingface.co/datasets/InternRobotics/MesaTask-10K).  After downloading, set `MESATASK_USD_ROOT` to the directory containing the `.usd` files before running any pipeline script:
+
+```bash
+export MESATASK_USD_ROOT=/path/to/mesatask_download/object_usds
+```
+
+The metadata file `assets/metadata/consolidated_asset_library_with_size.json` stores only filenames (e.g. `abc123.usd`); the code resolves them against `MESATASK_USD_ROOT` at runtime.
+
+### Stage 1 — Task generation & static filtering
+
+```bash
+# Generate all 5 task types, with inline static placement check
+# Output: proc_datagen/configs/{scene_id}/{task_type}.yaml
+python proc_datagen/task_generator.py \
+    --tasks all \
+    --output-dir proc_datagen/configs \
+    --verify-placement \
+    --occ-map-root assets/metadata \
+    --seed 42
+
+# Generate only specific types
+python proc_datagen/task_generator.py \
+    --tasks interactive gather \
+    --output-dir proc_datagen/configs
+
+# Polish task descriptions with an LLM after generation
+# (requires OPENAI_API_KEY and openai package)
+python proc_datagen/task_generator.py \
+    --tasks all \
+    --output-dir proc_datagen/configs \
+    --verify-placement \
+    --polish
+
+# Also export flat JSON files (backward compat)
+python proc_datagen/task_generator.py \
+    --tasks all \
+    --output-dir proc_datagen/configs \
+    --verify-placement \
+    --to-json
+```
+
+Output: `proc_datagen/configs/{scene_id}/{task_type}.yaml` — per-scene per-type YAML files containing `objects` (with positions) and `episodes` (with placements).
+
+### Stage 2 — Physics verification
+
+Run physics simulation to filter out tasks where objects fall or leave the surface:
+
+```bash
+# Verify all scenes and merge results (default)
+./scripts/filter/batch_filter_proc.sh
+
+# Only run physics (skip merge)
+./scripts/filter/batch_filter_proc.sh --stage physics
+
+# Only merge already-finished results
+./scripts/filter/batch_filter_proc.sh --stage merge
+```
+
+Results per task type:
+
+```
+proc_datagen/verify_results/{task_type}/
+    physics_valid.yaml                     # merged passing episodes across all scenes
+    {scene_id}/physics_passed.yaml         # per-scene passing episodes
+    {scene_id}/physics_failed.yaml         # per-scene failed episodes
+```
+
+To run a single scene manually (e.g. for debugging):
+
+```bash
+TASK_SOURCE_PATH=proc_datagen/configs/MVUCSQAKTKJ5EAABAAAAABQ8/interactive.yaml \
+OUTPUT_PATH=proc_datagen/verify_results/interactive/MVUCSQAKTKJ5EAABAAAAABQ8 \
+python proc_datagen/verify_proc.py --max-tasks 20
+```
+
+---
+
 
 ## 📑 Citation
 
