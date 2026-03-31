@@ -7,7 +7,8 @@
 <p align="center">
   <a href="https://github.com/InternRobotics/EmbodiedClaw"><img src="https://img.shields.io/badge/GitHub-EmbodiedClaw-black?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
   <img src="https://img.shields.io/badge/Phase_1-Released-10b981?style=flat-square" alt="Phase 1 Released" />
-  <img src="https://img.shields.io/badge/Phase_2-Coming_Soon-f97316?style=flat-square" alt="Phase 2 Coming Soon" />
+  <img src="https://img.shields.io/badge/Phase_2-Released-10b981?style=flat-square" alt="Phase 2 Released" />
+  <img src="https://img.shields.io/badge/Phase_3-Coming_Soon-f97316?style=flat-square" alt="Phase 3 Coming Soon" />
   <img src="https://img.shields.io/badge/License-MIT-6366f1?style=flat-square" alt="MIT License" />
 </p>
 
@@ -15,6 +16,7 @@
 
 ## 📰 News
 
+* **[2026.03.31]** 🔥🔥 **Phase 2 Released** — Procedural task & trajectory generation pipeline (GRScenes + MesaTask) is now open-source!
 * **[2026.03.24]** 🔥🔥 **Phase 1 Released** — Simulation engine (InternUtopia), nanobot interface, and MCP server are now open-source!
 
 ---
@@ -47,8 +49,8 @@ https://github.com/user-attachments/assets/b5d2424b-9a75-43d2-a33f-d657c9fd28f1
 | Stage | Status | Description |
 |-------|--------|-------------|
 | Phase 1 | ✅ **Released** | Simulation engine (InternUtopia), nanobot interface, MCP server |
-| - | 🔜 Coming soon | Task & trajectory generation pipeline (GRScenes + Mesatask) |
-| - | 🔜 Coming soon | Agent implementation, SFT & RL training pipeline |
+| Phase 2 | ✅ **Released** | Task & trajectory generation pipeline (GRScenes + MesaTask) |
+| Phase 3 | 🔜 Coming soon | Agent implementation, SFT & RL training pipeline |
 | - | 🔜 Coming soon | Technical report |
 
 
