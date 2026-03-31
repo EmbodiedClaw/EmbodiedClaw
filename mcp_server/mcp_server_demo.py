@@ -1,17 +1,17 @@
 """
 MCP evaluation server — non-headless GUI mode.
 
-mcp_env_debug is aliased as mcp_server.mcp_env in sys.modules so that
+mcp_env_demo is aliased as mcp_server.mcp_env in sys.modules so that
 actions.py shares the already-running simulation instance.
 
 Usage:
     DEMO_TASK_CONFIG=configs/demo_task.yaml \\
-    TRAJ_PATH=eval_output_debug \\
+    TRAJ_PATH=eval_output_demo \\
     PORT=8080 \\
-    python -m mcp_server.mcp_server_debug
+    python -m mcp_server.mcp_server_demo
 
 Or simply:
-    ./run_mcp_server_debug.sh
+    ./run_mcp_server_demo.sh
 """
 
 import asyncio
@@ -34,12 +34,12 @@ import uvicorn
 
 os.environ.setdefault('IS_TEST', '0')
 
-# Alias mcp_env_debug as mcp_server.mcp_env so actions.py shares this instance.
+# Alias mcp_env_demo as mcp_server.mcp_env so actions.py shares this instance.
 import sys
-import mcp_server.mcp_env_debug as _mcp_env_module
+import mcp_server.mcp_env_demo as _mcp_env_module
 sys.modules['mcp_server.mcp_env'] = _mcp_env_module
 
-from mcp_server.mcp_env_debug import (
+from mcp_server.mcp_env_demo import (
     env,
     camera,
     processed_eval_episodes,
@@ -62,7 +62,7 @@ from mcp_server.actions import (
 # =============================================================================
 
 sse = SseServerTransport("/messages/")
-app = Server('eval-server-debug')
+app = Server('eval-server-demo')
 
 
 @app.list_tools()
@@ -282,24 +282,24 @@ def main():
     api_thread = threading.Thread(target=run_api, name="HTTP-Thread", daemon=True)
     api_thread.start()
 
-    print(f"[DEBUG] MCP Server running on port {os.getenv('PORT', 8080)}")
-    print(f"[DEBUG] Scene: {TARGET_SCENE_ID}  (non-headless GUI mode)")
-    print(f"[DEBUG] Episodes: {len(eval_episodes)} (range [{EPISODE_START_IDX}, {EPISODE_END_IDX}))")
+    print(f"[DEMO] MCP Server running on port {os.getenv('PORT', 8080)}")
+    print(f"[DEMO] Scene: {TARGET_SCENE_ID}  (non-headless GUI mode)")
+    print(f"[DEMO] Episodes: {len(eval_episodes)} (range [{EPISODE_START_IDX}, {EPISODE_END_IDX}))")
 
-    # Auto-load an episode at startup so objects are spawned for debugging.
-    # Prefer the first episode that has ≥2 placements for a richer debug scene.
+    # Auto-load an episode at startup so objects are spawned for the demo.
+    # Prefer the first episode that has ≥2 placements for a richer demo scene.
     if eval_episodes:
         global current_episode_idx
-        debug_local_idx = next(
+        demo_local_idx = next(
             (i for i, ep in enumerate(eval_episodes) if len(ep['placements']) >= 2),
             0,
         )
-        current_episode_idx = debug_local_idx - 1  # handle_finish() increments by 1
+        current_episode_idx = demo_local_idx - 1  # handle_finish() increments by 1
 
-        print(f"[DEBUG] Auto-loading episode local_idx={debug_local_idx} "
-              f"({len(eval_episodes[debug_local_idx]['placements'])} objects)...")
+        print(f"[DEMO] Auto-loading episode local_idx={demo_local_idx} "
+              f"({len(eval_episodes[demo_local_idx]['placements'])} objects)...")
         init_result = handle_finish()
-        print(f"[DEBUG] Spawn done: {init_result[0].text[:200] if init_result else 'none'}")
+        print(f"[DEMO] Spawn done: {init_result[0].text[:200] if init_result else 'none'}")
 
     while env.simulation_app.is_running():
         _ensure_playing()
